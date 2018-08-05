@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <center><h1><font color="maroon"><u>REGULAR EXPRESSION</u></font></h1></center>
+
+    <meta charset="UTF-8">
+    <title>EW Technologies online learning</title>
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<p><font size="4">
+A regular expression is a special sequence of characters that helps you match or find other strings or sets of strings. Regular expressions are widely used in UNIX world.
+<br>
+RE is an expression that retrieves required information from the given data.
+<pre>
+ Used on huge data
+ It is used in data science
+ Used to retrieve data speedily
+
+    Module name is   re
+    import re
+
+     <u>Pattern</u>         <u>Description</u>
+
+       ^             Matches beginning of line.
+       $             Matches end of line.
+       .             Matches any single character except newline. Using m option allows it to match newline as well.
+     [...]           Matches any single character in brackets.
+     [^...]          Matches any single character not in brackets.
+       re*           Matches 0 or more occurrences of preceding expression.
+       re+           Matches 1 or more occurrence of preceding expression.
+       re?           Matches 0 or 1 occurrence of preceding expression.
+       re{ n}        Matches exactly n number of occurrences of preceding expression.
+       re{ n,}       Matches n or more occurrences of preceding expression.
+       re{ n, m}     Matches at least n and at most m occurrences of preceding expression.
+       a| b          Matches either a or b.
+       (re)          Groups regular expressions and remembers matched text.
+       \w            Matches word characters.
+       \W            Matches nonword characters.
+       \s            Matches whitespace. Equivalent to [\t\n\r\f].
+       \S            Matches nonwhitespace.
+       \d            Matches digits. Equivalent to [0-9].
+       \D            Matches nondigits.
+       \A            Matches beginning of string.
+       \Z            Matches end of string. If a newline exists, it matches just before newline.
+       \z            Matches end of string.
+    \n, \t, etc.     Matches newlines, carriage returns, tabs, etc.
+    \1...\9          Matches nth grouped subexpression.
+
+<font color="#00008b" size="5">Search("finding word", string_name): </font>
+Returns first occurance.group(). If data not found return none.
+
+    Example.
+    <font style="background-color: yellowgreen"># Write a RE to search for string starting with m and having 3 character</font>
+    import re
+    str="man sun mop run mat wat"
+    rest=re.search('m\w\w',str)
+    #print(rest)
+    if rest:
+        print(rest.group())
+    else:
+        print("not matching with 1st charecter")
+    o/p:
+    man
+
+<font color="#00008b" size="5">findall():</font>
+Returns all the matching  strings .
+    Example
+    <font style="background-color: yellowgreen"> #write a RE to findall for string starting with m and having 3 charecter</font>
+    import re
+    str="man sun mop run mat wat"
+    rest=re.findall('m\w\w',str)
+    #print(rest)
+    for x in rest:
+        print(x)
+
+    o/p:
+    man
+    mop
+    mat
+
+<font color="#00008b" size="5">match():</font>
+Searches in the beginning. group() if not found return none.
+    Example
+    <font style="background-color: yellowgreen"> #write a RE to match for string starting with m and having 3 charecter</font>
+    import re
+    str="man sun mop run mat wat"
+    rest=re.match('m\w\w',str)
+    #print(rest)
+    if rest:     # also we can write if rest!='\0':
+        print(rest.group())
+    else:
+        print("not matching with 1st charecter")
+
+    o/p:
+    man
+
+    Example
+    <font style="background-color: yellowgreen"># Write A RE to retrieve role number</font>
+    import re
+    str='10 A,202 B,30 C,40 D'
+    res=re.findall('\d\d',str) # only take 2 digit
+    print(res)
+    res=re.findall('\d+',str) # here take all type of digit
+    print(res)
+    res=re.findall('\D+',str) #\D take alphabet only
+    for i in res:
+        print(i)
+
+    o/p:
+    ['10', '20', '30', '40']
+    ['10', '202', '30', '40']
+     A,
+     B,
+     C,
+     D
+
+<font color="#00008b" size="5">split():</font>
+Cut the string at the particular place indicated by RE.
+    Example
+    <font style="background-color: yellowgreen"># split a string at numaric chars</font>
+    import re
+    str="gopi 1200 vini 01251 subba 125510 roy 2541"
+    res=re.split('\d+',str)
+    #print(res)
+    for i in res:
+        print(i)
+
+    o/p:
+    gopi
+     vini
+     subba
+     roy
+
+    Example
+    <font style="background-color: yellowgreen"># W A RE to splete a string where  a comma and colon founded</font>
+    import re
+    str="gopi, 1200 :vini 01251,: subba 125510: roy 2541"
+    rexp='[ , :]'
+    res=re.split(rexp,str)
+    for i in res:
+        print(i)
+
+    o/p:
+    gopi
+
+    1200
+
+    vini
+    01251
+
+
+    subba
+    125510
+
+    roy
+    2541
+
+
+<font color="#00008b" size="5">sub():</font>
+Substitute a new string in the place of existing string.
+ Syntax:
+   Re.sub("old_String","new_string",str)
+
+    Example
+    <font style="background-color: yellowgreen"># W A RE to replace existing string with another one</font>
+    import re
+    str="Java is very good programming language besause Java is scripting language"
+    res=re.sub("Java","Python",str)
+    print(res)
+
+    o/p:
+    Python is very good programming language besause Python is scripting language
+
+    Example
+    <font style="background-color: yellowgreen">#retrieve the Bob from str </font>
+    import re
+    str="V 20 1-2-1994,B 21 22-13-1895,K 24 13-8-1935"
+    # for DOB display
+    lst=re.findall("\d{1,2}-\d{1,2}-\d{4}",str)
+    print("DOB\t",lst)
+
+    o/p:
+    DOB	 ['1-2-1994', '22-13-1895', '13-8-1935']
+
+</pre>
+</font>
+
+        <marquee><h1><span style="color: purple">END REGULAR EXPRESSION </span></h1></marquee>
+
+</p></body>
+</html>

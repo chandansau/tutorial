@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <center><h1><font color="maroon"><u>EXCEPTIONS</u></font></h1></center>
+    <meta charset="UTF-8">
+    <title>EW Technologies online learning</title>
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+ <marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="6">Exceptions</font></marquee><br>
+
+<p><font size="4">
+An exception is an error that happens during execution of a program. When that error occurs, Python generate an exception that can be handled, which avoids your
+program to crash.
+
+<pre>
+    Try: it prevents termination of program.
+    Except: To display message to the user .
+    Finally: To close all the Database and files.
+
+    Syntax:
+    Try:
+        Statement 1
+
+    Except:
+         Statement 2
+
+    Except:
+          Statement 3
+
+    Finally:
+             Statement 4
+    Else:
+        Statement 5
+
+<font color="#00008b" size="5">assert stmt:</font>
+    to display a msg when a condition is not fulfilled
+    syntax :
+    assert
+<font style="background-color: yellowgreen">   # to raise assertion error if the user i/p is not b/w 5 and 10</font>
+    x=int(input("Enter number"))
+    assert x>5 and x<10,'please enter value b/w 5 and 10'
+    print(x)
+    o/p:
+    Enter number6
+    6
+
+<font style="background-color: yellowgreen">   # to raise assertion error if the user i/p is not b/w 5 and 10</font>
+    try:
+        x=int(input("Enter number"))
+        assert x>5 and x<10,'please enter value b/w 5 and 10'
+        print(x)
+    except AssertionError as e:
+        print(e)
+    o/p:
+    Enter number6
+    6
+
+    Enter number4
+    please enter value b/w 5 and 10
+
+
+
+</pre>
+ <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="6">Errors in Python Program</font></marquee><br>
+<pre>
+    => Compile-time error
+    => Runtime error
+    => Logical error
+
+<font color="#00008b" size="5">Compile-time error:</font>
+Compile-time checking occurs during the compile time. Compile time errors are error occurred due to typing mistake, if we do not follow the proper
+syntax and semantics of any programming language then compile time errors are thrown by the compiler.
+
+    Example
+    x=1
+    if x==1
+        print("where is mistake?")
+    o/p:
+     File "<ipython-input-2-cf7848065416>", line 2
+     if x==1
+            ^
+    SyntaxError: invalid syntax
+
+<font color="#00008b" size="5">Runtime error:</font>
+Run-time type checking happens during run time of programs. Runtime errors are the errors that are generated when the program is in running state.
+These types of errors will cause your program to behave unexpectedly or may even kill your program.
+    Example
+    def pro(a,b):
+        print(a+b)
+    pro("Hii",25)
+
+    o/p:
+    TypeError                                 Traceback (most recent call last)
+    <ipython-input-3-f819b72348e5> in <module>()
+          1 def pro(a,b):
+          2     print(a+b)
+    ----> 3 pro("Hii",25)
+
+    <ipython-input-3-f819b72348e5> in pro(a, b)
+          1 def pro(a,b):
+    ----> 2     print(a+b)
+          3 pro("Hii",25)
+
+    TypeError: must be str, not int
+
+<font color="#00008b" size="5">Logical error:</font>
+Logical errors are the most difficult to fix. They occur when the program runs without crashing, but produces an incorrect result. The error is caused
+by a mistake in the program’s logic. You won’t get an error message, because no syntax or runtime error has occurred.
+
+
+</pre>
+<marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="6"> Types of Exceptions</font></marquee><br>
+<pre>
+    Two type 1. Built-in Exception
+             2. User-define exception
+
+<font color="#00008b" size="5">Built-in Exception:</font>
+exception <font color="#dc143c" size="5">Exception</font>
+All built-in, non-system-exiting exceptions are derived from this class. All user-defined exceptions should also be derived from this class.
+exception <font color="#dc143c" size="5">StandardError</font>
+The base class for all built-in exceptions except StopIteration, GeneratorExit, KeyboardInterrupt and SystemExit. StandardError itself is derived from
+Exception.
+
+exception <font color="#dc143c" size="5">ArithmeticError</font>
+The base class for those built-in exceptions that are raised for various arithmetic errors: OverflowError, ZeroDivisionError, FloatingPointError.
+
+exception<font color="#dc143c" size="5"> BufferError</font>
+Raised when a buffer related operation cannot be performed.
+
+exception<font color="#dc143c" size="5"> LookupError</font>
+The base class for the exceptions that are raised when a key or index used on a mapping or sequence is invalid: IndexError, KeyError. This can be raised
+directly by codecs.lookup().
+
+exception <font color="#dc143c" size="5">AssertionError</font>
+Raised when an assert statement fails.
+
+exception<font color="#dc143c" size="5"> AttributeError</font>
+Raised when an attribute reference (see Attribute references) or assignment fails. (When an object does not support attribute references or attribute
+ assignments at all, TypeError is raised.)
+
+exception<font color="#dc143c" size="5"> EOFError</font>
+Raised when one of the built-in functions (input() or raw_input()) hits an end-of-file condition (EOF) without reading any data. (N.B.: the file.read()
+and file.
+readline() methods return an empty string when they hit EOF.)
+
+exception <font color="#dc143c" size="5">FloatingPointError</font>
+Raised when a floating point operation fails. This exception is always defined, but can only be raised when Python is configured with the --with-fpectl
+option, or the WANT_SIGFPE_HANDLER symbol is defined in the pyconfig.h file.
+
+exception <font color="#dc143c" size="5">GeneratorExit</font>
+Raised when a generator’s close() method is called. It directly inherits from BaseException instead of StandardError since it is technically not an
+error.
+
+exception<font color="#dc143c" size="5"> IOError</font>
+Raised when an I/O operation (such as a print statement, the built-in open() function or a method of a file object) fails for an I/O-related reason,
+e.g., "file not found" or "disk full".
+
+exception <font color="#dc143c" size="5">ImportError</font>
+Raised when an import statement fails to find the module definition or when a from ... import fails to find a name that is to be imported.
+
+exception <font color="#dc143c" size="5">IndexError</font>
+Raised when a sequence subscript is out of range. (Slice indices are silently truncated to fall in the allowed range; if an index is not a plain
+integer, TypeError is raised.)
+
+exception <font color="#dc143c" size="5">KeyError</font>
+Raised when a mapping (dictionary) key is not found in the set of existing keys.
+
+exception<font color="#dc143c" size="5"> KeyboardInterrupt</font>
+Raised when the user hits the interrupt key (normally Control-C or Delete). During execution, a check for interrupts is made regularly. Interrupts
+typed when a built-infunction input() or raw_input() is waiting for input also raise this exception. The exception inherits from BaseException so
+as to not be accidentally caught by code that catches Exception and thus prevent the interpreter from exiting.
+
+exception <font color="#dc143c" size="5">NameError</font>
+Raised when a local or global name is not found. This applies only to unqualified names. The associated value is an error message that includes the
+name that could not be found.
+
+exception<font color="#dc143c" size="5"> RuntimeError</font>
+Raised when an error is detected that doesn’t fall in any of the other categories. The associated value is a string indicating what precisely
+went wrong.
+
+exception <font color="#dc143c" size="5">SyntaxError</font>
+Raised when the parser encounters a syntax error. This may occur in an import statement, in an exec statement, in a call to the built-in function
+eval() or input(), or when reading the initial script or standard input (also interactively).
+
+exception<font color="#dc143c" size="5"> SystemExit</font>
+This exception is raised by the sys.exit() function. When it is not handled, the Python interpreter exits; no stack traceback is printed. If the
+associated value is a plain integer, it specifies the system exit status (passed to C’s exit() function); if it is None, the exit status is zero; if
+it has another type (such as a string), the object’s value is printed and the exit status is one.
+
+exception<font color="#dc143c" size="5"> TypeError</font>
+Raised when an operation or function is applied to an object of inappropriate type. The associated value is a string giving details about the type
+mismatch.
+
+exception<font color="#dc143c" size="5"> UnicodeError</font>
+Raised when a Unicode-related encoding or decoding error occurs. It is a subclass of ValueError.
+
+    Example
+    <font style="background-color: yellowgreen"> #syntax error</font>
+    try:
+        x=eval(input("Enter Date"))
+    except SyntaxError:
+        print("Invalid Date...")
+    else:
+        print("Date:",x)
+
+    o/p:
+    Enter Date2016,10,3
+    Date: (2016, 10, 3)
+    Enter Date2016,06b,6
+    Invalid Date...
+
+<font color="#00008b" size="5">User-Defined Exceptions</font>
+Programmers may name their own exceptions by creating a new exception class.
+    Example
+    <font style="background-color: yellowgreen">    Eeample for User-Defined Exceptions</font>
+    class MyError(Exception):
+
+        # Constructor or Initializer
+        def __init__(self, value):
+            self.value = value
+        def pro(self):
+            try:
+                if(self.value>5 and self.value<15 ):
+                    raise(MyError(self.value))
+
+            except MyError as error:
+                print('Exception occured: ',error.value)
+
+            else:
+                print("No Exception",self.value)
+
+    x=int(input("Enter value"))
+    ob=MyError(x)
+    ob.pro()
+
+    o/p:
+    Enter value18
+    No Exception 18
+    Enter value11
+    Exception occured:  11
+
+<font color="#00008b" size="5">Creating log file</font>
+    Example
+    import logging   # logging is module name
+    logging.basicConfig(filename='mylog.txt',level=logging.ERROR)
+    try:
+        a=int(input("Enter 1st no."))
+        b=int(input("Enter 2nd no."))
+        c=a/b
+    except Exception as e:
+        logging.exception(e) #there store in the file
+        print("Sucessfully save")
+    else:
+        print("Result:\t",c)
+
+    #log file create by tester
+
+    o/p:
+    Enter 1st no.10
+    Enter 2nd no.ab
+    Sucessfully save
+
+The message of this exception also added to our mylog.txt file.Now open the file and see the following exceptions:
+   <font color="red"> ERROR:root:invalid literal for int() with base 10: 'ab'
+    Traceback (most recent call last):
+      File "<ipython-input-35-d302a9fcfa4a>", line 5, in <module>
+        b=int(input("Enter 2nd no."))
+    ValueError: invalid literal for int() with base 10: 'ab'
+</font>
+</pre>
+<marquee><h1><span style="color: purple">END EXCEPTIONS </span></h1></marquee>
+</font>
+</p>
+</body>
+</html>

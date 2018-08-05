@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <center><h1><font color="maroon"><u>INTRODUCTION TO OOPS</u></font></h1></center>
+    <meta charset="UTF-8">
+    <title>EW Technologies online learning</title>
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<p><font size="4">
+Python is an object-oriented programming language. It allows us to develop applications using Object Oriented approach. In Python, we can easily create and use classes and objects.
+<pre>
+Major principles of object-oriented programming system are given below:
+    => Object
+    => Class
+    => Method
+    => Inheritance
+    => Polymorphism
+    => Data Abstraction
+    => Encapsulation
+</pre>
+<font color="#00008b" size="5">Object:</font>: <br>Object is nothing but physical entity.<br>
+    For example: mouse, keyboard, chair, table, pen etc.<br>
+<br>
+<font color="#00008b" size="5">Class:</font>: <br>Class is nothing but  logical entity.<br>
+    For example: animals,motorvical etc<br>
+<br>
+<font color="#00008b" size="5">Method:</font><br> A special kind of function that is defined in a class definition.<br>
+<br>
+<font color="#00008b" size="5">Inheritance:</font><br>
+    The transfer of the characteristics of a class to other classes that are derived from it.<br>
+<br>
+<font color="#00008b" size="5">Polymorphism:</font><br>
+    Polymorphism is made by two words "poly" and "morphs". Poly means many and Morphs means form, shape. It defines that one task can be performed in different ways.
+<br><br>
+<font color="#00008b" size="5">Data Abstraction:</font><br>
+    Abstraction is used to hide internal details and show only functionalities.
+<br><br>
+<font color="#00008b" size="5">Encapsulation:</font><br>
+    Encapsulation is also the feature of object-oriented programming. It is used to restrict access to methods and variables. In encapsulation, code and data are wrapped together within a single unit from being modified by accident.
+<pre>
+    syntax:
+    class ClassName:
+        statement-1
+        .
+        .
+        statement-N
+
+     Example
+     <font style="background-color: yellowgreen"> Display Employee Name and Salary</font>
+
+     class Employee:
+        empCount = 0
+
+        def __init__(self, name, salary):
+            self.name = name
+            self.salary = salary
+            Employee.empCount += 1
+
+        def Count(self):
+            print("Total Employee %d" % Employee.empCount)
+
+        def Employee(self):
+            print("Name : ", self.name,  ", Salary: ", self.salary)
+
+        ob=Employee("Chandan",67000.23)  #creating object
+        ob.Count()
+        ob.Employee()
+
+     o/p:
+     Total Employee 1
+     Name :  Chandan , Salary:  67000.23
+
+      Example
+      <font style="background-color: yellowgreen"> Display Employee Name and Salary</font>
+        class Employee:
+        empCount = 0
+
+        def __init__(self, name):
+            self.name = name
+            Employee.empCount += 1
+
+        def Count(self):
+            print("Total Employee %d" % Employee.empCount)
+
+        def Employee(self,sal):
+            print("Name : ", self.name,  ", Salary: ", sal)
+
+        name=input("Enter Employee name")
+        sal=float(input("Enter salary"))
+        ob=Employee(name)
+        ob.Count()
+        ob.Employee(sal)
+
+    o/p:
+    Enter Employee nameRam
+    Enter salary61000.236
+    Total Employee 1
+    Name :  Ram , Salary:  61000.236
+</pre>
+    <marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();">    <font color="#00008b" size="5">Constructor : </font></marquee><br>
+It is a method that is useful to create instance variable and initialize them     :
+<pre>
+
+Type of constructor:
+    1. Default constructor or zero parameterize constructor
+    2. parameterize constructor  one or more constructors
+    <font style="background-color: yellowgreen"> When we called constructor </font>:  It is called automatically when object is created
+<font color="#00008b" size="4">Parameterize constructor:</font>
+    Example
+    <font style="background-color: yellowgreen">  #create a student class store name and marks in 5 subject</font>
+    class student:
+
+        def __init__(self,name,mark):
+            self.name=name
+            self.mark=mark
+        def division(self):
+            print("Name:",self.name,"\nmarks:\t",self.mark[0],self.mark[1],self.mark[2],self.mark[3],self.mark[4])
+            print("\nTotal marks:\t",sum(self.mark))
+
+    ob=student("Tarun",[82,66,68,72,55,75])
+    ob.division()
+
+    o/p:
+    Name: Tarun
+    marks:	 82 66 68 72 55
+
+    Total marks:	 418
+
+<font color="#00008b" size="4">Default constructor:</font>
+    Example
+    <font style="background-color: yellowgreen">  #create a student class store name and marks in 5 subject</font>
+
+    class student:
+
+        def __init__(self,name="Barun",mark=[57,87,92,86,78]):  #in parameter we use defult value
+            self.name=name
+            self.mark=mark
+
+
+        def division(self):
+            print("Name:",self.name,"\nmarks:\t",self.mark[0],self.mark[1],self.mark[2],self.mark[3],self.mark[4])
+            print("\nTotal marks:\t",sum(self.mark))
+
+    ob=student()
+    ob.division()
+
+    o/p:
+    Name: Barun
+    marks:	 57 87 92 86 78
+
+    Total marks:	 400
+
+<font color="#00008b" size="4">1.Instance variable: </font>
+    => If instance var is modified in an object it will not effect other objects.
+    => If class var is modified in an object it will affect other objects.
+    => but class var is modified in instance namespace ,it not affect in other object .
+
+<font color="#00008b" size="4">2.Static variable or class variable :  </font>
+    Single copy share by all objects.
+
+    Example
+    class st:
+        x=10
+    class st:
+        x=10
+        @classmethod  # @classmethod decorator work as global obj Next progrem write without decorator and see output
+        def modify(cls):
+
+            cls.x+=1
+
+    s1=st()
+    s2=st()
+    print(s1.x,s2.x)
+    s1.modify()
+    print(s1.x,s2.x)
+
+    o/p:
+    10 10
+    11 11
+
+    Example 2
+    class st:
+        x=10
+        #@classmethod  # @classmethod decorator work as global obj
+        def modify(cls):
+
+            cls.x+=1
+
+    s1=st()
+    s2=st()
+    print(s1.x,s2.x)
+    s1.modify()
+    print(s1.x,s2.x)
+
+    o/p:
+    10 10
+    11 10
+
+<font color="#00008b" size="5">The variable which are inside a class 2 type :</font>
+    1>	Instance variable
+    2>	Class variable
+<font color="#00008b" size="5">Types of methods:</font>
+    1>	Instance method  -> act upon instance variable
+        a>	accessor method->only read not modify  the instance variable
+        Eg. getter method.getxxx()
+        b>	mutator method->not only  read but also modify them
+        Eg. setter method.getxxx()
+
+    <font style="background-color: yellowgreen">#write emp class with getter and setter method</font>
+    class emp:
+        def setId(self,id):
+            self.id=id
+        def getid(self):
+            return(self.id)
+        def setName(self,name):
+            self.name=name
+        def getName(self):
+            return(self.name)
+        def setSal(self,sal):
+            self.sal=sal
+        def getSal(self):
+            return(self.sal)
+    ob=emp()
+    ob.setId(10)
+    ob.setName("Babu")
+    ob.setSal(123532.45)
+    print(ob.getid())
+    print(ob.getName())
+    print(ob.getSal())
+
+    o/p:
+    10
+    Babu
+    123532.45
+
+<font color="#00008b" size="5">Outer class and Inner class :</font>
+    Example
+    <font style="background-color: yellowgreen"> #create DOB class inside student class</font>
+    class std:
+        def __init__(self):
+            self.id=10
+            self.name="Babu"
+        def disp(self):
+            print("Id:",self.id,"\tName:\t",self.name)
+        class dob:                                          #inner class
+            def __init__(self):
+                self.dd=4
+                self.mm=11
+                self.yy=1994
+            def disp(self):
+                print("DOB:\t",self.yy,"-",self.mm,"-",self.dd)
+    s=std()
+    s.disp()
+    #for inner class
+    d=std().dob()
+    d.disp()
+    o/p:
+    Id: 10 	Name:	 Babu
+    DOB:	 1994 - 11 - 4
+
+
+</pre>
+<marquee><h1><span style="color: purple">END INTRODUCTION TO OOPS</span></h1></marquee>
+
+
+</font> </pre>
+</body>
+</html>

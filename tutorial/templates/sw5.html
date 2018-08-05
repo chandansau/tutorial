@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EW Technologies online learning</title>
+             <center><h1><font color="maroon"><u>STRING INTERPOLATION</u></font></h1></center>
+
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<font size="4">
+
+                    <p>This is a fancy name for what is actually a very simple thing: combining variables and constants inside a string.</p>
+<p>Clear out all the code you just wrote and leave only this:</p>
+<pre><code class="language-swift">var name = "Tim McGraw"</code></pre>
+<p>If we wanted to print out a message to the user that included their name, string interpolation is what makes that easy: you just write a backslash, then an open parenthesis, then your code, then a close parenthesis, like this:</p>
+<pre><code class="language-swift">var name = "Tim McGraw"
+"Your name is \(name)"</code></pre>
+<p>The results pane will now show &quot;Your name is Tim McGraw&quot; all as one string, because string interpolation combined the two for us.</p>
+<p>Now, we could have written that using the <code>+</code> operator, like this:</p>
+<pre><code class="language-swift">var name = "Tim McGraw"
+"Your name is " + name</code></pre>
+<p> but that's not as efficient, particularly if you're combining multiple variables together. In addition, string interpolation in Swift is smart enough to be able to handle a variety of different data types automatically. For example:</p>
+<pre><code class="language-swift">var name = "Tim McGraw"
+var age = 25
+var latitude = 36.166667
+
+"Your name is \(name), your age is \(age), and your latitude is \(latitude)"</code></pre>
+<p>Doing that using <code>+</code> is much more difficult, because Swift doesn't let you add integers and doubles to a string.</p>
+<p>At this point your result may no longer fit in the results pane, so either resize your window or hover over the result and click the + button that appears to have it shown inline.</p>
+<p>One of the powerful features of string interpolation is that everything between <code>\(</code> and <code>)</code> can actually be a full Swift expression. For example, you can do mathematics in there using operators, like this:</p>
+<pre><code class="language-swift">var age = 25
+"You are \(age) years old. In another \(age) years you will be \(age * 2)."</code></pre>
+</font>
+<marquee >  <font color="purple" ><h1>END STRING INTERPOLATION</h1></font></marquee><br>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EW Technologies online learning</title>
+   <center><h1><font color="maroon"><u>SWITCH CASE</u></font></h1></center>
+
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<font size="4">                    <p>You've seen <code>if</code> statements and now loops, but Swift has another type of flow control called <code>switch/case</code>. It's easiest to think of this as being an advanced form of <code>if</code>, because you can have lots of matches and Swift will execute the right one.</p>
+<p>In the most basic form of a <code>switch/case</code> you tell Swift what variable you want to check, then provide a list of possible cases for that variable. Swift will find the first case that matches your variable, then run its block of code. When that block finishes, Swift exits the whole <code>switch/case</code> block.</p>
+<p>Here's a basic example:</p>
+<pre><code class="language-swift">let liveAlbums = 2
+
+switch liveAlbums {
+case 0:
+    print("You're just starting out")
+
+case 1:
+    print("You just released iTunes Live From SoHo")
+
+case 2:
+    print("You just released Speak Now World Tour")
+
+default:
+    print("Have you done something new?")
+}</code></pre>
+<p>We could very well have written that using lots of <code>if</code> and <code>else if</code> blocks, but this way is clearer and that's important.</p>
+<p>One advantage to <code>switch/case</code> is that Swift will ensure your cases are exhaustive. That is, if there's the possibility of your variable having a value you don't check for, Xcode will refuse to build your app.</p>
+<p>In situations where the values are effectively open ended, like our <code>liveAlbums</code> integer, you need to include a <code>default</code> case to catch these potential values. Yes, even if you &quot;know&quot; your data can only fall within a certain range, Swift wants to be absolutely sure.</p>
+<p>Swift can apply some evaluation to your case statements in order to match against variables. For example, if you wanted to check for a range of possible values, you could use the closed range operator like this:</p>
+<pre><code class="language-swift">let studioAlbums = 5
+
+switch studioAlbums {
+case 0...1:
+    print("You're just starting out")
+
+case 2...3:
+    print("You're a rising star")
+
+case 4...5:
+    print("You're world famous!")
+
+default:
+    print("Have you done something new?")
+}</code></pre>
+<p>One thing you should know is that <code>switch/case</code> blocks in Swift don't fall through like they do in some other languages you might have seen. If you're used to writing <code>break</code> in your <code>case</code> blocks, you should know this isn't needed in Swift. </p>
+<p>Instead, you use the <code>fallthrough</code> keyword to make one case fall into the next – it's effectively the opposite. Of course, if you have no idea what any of this means, that's even better: don't worry about it!</p>
+
+</font>
+<marquee>  <font color="purple" ><h1>END SWITCH CASE </h1></font></marquee><br>
+
+</body>
+</html>

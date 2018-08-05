@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <center><h1><font color="maroon"><u>LIST, TUPLE AND DICTIONARIES</u></font></h1></center>
+
+    <meta charset="UTF-8">
+    <title>EW Technologies online learning</title>
+</head>
+<body  style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<p><font size="4">
+Two of the most commonly used built-in data types in Python are the list and the tuple.Lists and tuples are part of the group of sequence data types—in other words, lists and tuples store one or more objects or values in a specific order. The objects stored in a list or tuple can be of any type, including the nothing type defined by the None keyword.The big difference between lists and tuples is that lists are mutable, however tuples are immutable.
+<pre>
+# Lists must be surrounded by brackets
+>>> emptylst = []
+# Tuples may or may not be surrounded by parenthesis
+>>> emptytup = ()
+</pre>
+<marquee  onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="5">LIST</font></marquee>
+The list is a most versatile datatype available in Python which can be written as a list of comma-separated values (items) between square brackets. Important thing about a list is that items in a list need not be of the same type. Lists are mutable.
+<br>
+   <br> <font color="#00008b" size="5">LIST METHODS:</font>
+    <br>
+ <center> <img src="/media/b7.JPG"  height="50%" width="75%"></center>
+     <center> <img src="/media/b8.JPG"  height="50%" width="75%"></center>
+<pre>
+    Example
+
+    a=[2,4,6,7,3]
+    b=[3,1,9]
+    print(a)
+    for i in a:
+        print(i,end=" ")
+    a.append(10)        #list.append(item)
+    print("\n",a)
+    a.extend(b)         #list1.extend(list2)
+    print(a)
+    a.insert(3,5)       #insert(index number,element)
+    print(a)
+    a.remove(10)        #list.remove(element)
+    print(a)
+    print(a.index(7))   #list.index(element)
+    print(a.count(3))   #list.count(element)
+    print(a.pop(-3))    #list.pop(index)
+    print(a)
+    a.reverse()         #list.reverse()
+    print(a)
+    a.sort()            #list.sort(key=..., reverse=...)
+    print(a)
+    a.clear()           #list.clear()
+    print(a)
+    o/p:
+    [2, 4, 6, 7, 3]
+    2 4 6 7 3
+     [2, 4, 6, 7, 3, 10]
+    [2, 4, 6, 7, 3, 10, 3, 1, 9]
+    [2, 4, 6, 5, 7, 3, 10, 3, 1, 9]
+    [2, 4, 6, 5, 7, 3, 3, 1, 9]
+    4
+    2
+    3
+    [2, 4, 6, 5, 7, 3, 1, 9]
+    [9, 1, 3, 7, 5, 6, 4, 2]
+    [1, 2, 3, 4, 5, 6, 7, 9]
+    []
+</pre>
+
+<marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="5">TUPLE</font></marquee>
+A tuple is a sequence of immutable Python objects. Tuples are sequences, just like lists. The differences between tuples and lists are, the tuples cannot be changed unlike lists and tuples use parentheses, whereas lists use square brackets. Tuples are immutable.
+<br>
+       <br> <font color="#00008b" size="5">TUPLE METHODS:</font>
+
+     <center> <img src="/media/b9.JPG"  height="50%" width="75%"></center>
+     <center> <img src="/media/b10.JPG"  height="50%" width="75%"></center>
+<pre>
+    Example
+
+    a=(2,4,6,7,3)
+    b=(3,1,9)
+    print(a)
+    for i in a:
+        print(i,end=" ")
+    print("\n",a+b)
+    print(a.index(7))   #list.index(element)
+    print(a.count(3))   #list.count(element)
+
+    o/p:
+    (2, 4, 6, 7, 3)
+    2 4 6 7 3
+     (2, 4, 6, 7, 3, 3, 1, 9)
+    3
+    1
+</pre>
+<marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="5">DICTIONARIES</font></marquee>
+Each key is separated from its value by a colon (:), the items are separated by commas, and the whole thing is enclosed in curly braces. An empty dictionary without any items is written with just two curly braces, like this: {}. Dictionary are immutable.
+<br>
+   Syntax:<br>
+    dict={"key":value, "key":value,...}
+<br>
+       <br> <font color="#00008b" size="5">DICTIONARIES METHODS:</font>
+
+     <center> <img src="/media/b11.JPG"  height="50%" width="75%"></center>
+     <center> <img src="/media/b12.JPG"  height="50%" width="75%"></center>
+
+<pre>
+    Example
+    d = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+    keys = {'a', 'e', 'i', 'o', 'u' }
+    d1={"Class":"Four"}
+    values={}
+    print(d)
+    dt=d.copy()         #dict.copy()
+    print(dt)
+    dt.clear()          #dict.clear()
+    print(dt)
+    print(d.fromkeys(keys))
+    print(d.get("Name"))
+    print(d["Age"])
+    print(d.keys())
+    print(d.values())
+    print(d.popitem())
+    d.update(d1)
+    print(d)
+    print(d.pop("Age"))
+    print(d)
+
+    o/p:
+    {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+    {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+    {}
+    {'i': None, 'a': None, 'o': None, 'u': None, 'e': None}
+    Zara
+    7
+    dict_keys(['Name', 'Age', 'Class'])
+    dict_values(['Zara', 7, 'First'])
+    ('Class', 'First')
+    {'Name': 'Zara', 'Age': 7, 'Class': 'Four'}
+    7
+    {'Name': 'Zara', 'Class': 'Four'}
+
+</pre>
+
+<marquee><h1><span style="color: purple">END LIST, TUPLE AND DICTIONARIES</span></h1></marquee>
+
+
+
+
+
+</font>
+</pre>
+</body>
+</html>

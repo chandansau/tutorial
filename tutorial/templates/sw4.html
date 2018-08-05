@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EW Technologies online learning</title>
+         <center><h1><font color="maroon"><u>OPERATORS</u></font></h1></center>
+
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<font size="4">
+                    <p>Operators are those little symbols you learned in your very first math classes: <code>+</code> to add, <code>-</code> to subtract, <code>*</code> to multiply, <code>/</code> to divide, <code>=</code> to assign value, and so on. They all exist in Swift, along with a few extras.</p>
+<p>Let's try a few basics – please type this into your playground:</p>
+<pre><code class="language-swift">var a = 10
+a = a + 1
+a = a - 1
+a = a * a</code></pre>
+<p>In the results pane, you'll see 10, 11, 10 and 100 respectively. Now try this:</p>
+<pre><code class="language-swift">var b = 10
+b += 10
+b -= 10</code></pre>
+<p><code>+=</code> is an operator that means &quot;add then assign to.&quot; In our case it means &quot;take the current value of <code>b</code>, add 10 to it, then put the result back into <code>b</code>.&quot; As you might imagine, <code>-=</code> does the same but subtracts rather than adds. So, that code will show 10, 20, 10 in the results pane.</p>
+<p>Some of these operators apply to other data types. As you might imagine, you can add two doubles together like this:</p>
+<pre><code class="language-swift">var a = 1.1
+var b = 2.2
+var c = a + b</code></pre>
+<p>When it comes to strings, <code>+</code> will join them together. For example:</p>
+<pre><code class="language-swift">var name1 = "Tim McGraw"
+var name2 = "Romeo"
+var both = name1 + " and " + name2</code></pre>
+<p>That will write &quot;Tim McGraw and Romeo&quot; into the results pane.</p>
+<p>One more common operator you’ll see is called modulus, and is written using a percent symbol: <code>%</code>. It means “divide the left hand number evenly by the right, and return the remainder.” So, <code>9 % 3</code> returns 0 because 3 divides evenly into 9, whereas <code>10 % 3</code> returns 1, because 10 divides by 3 three times, with remainder 1.</p>
+<p><strong>Note:</strong> If you bought Hacking with Swift and are using the exclusive guide book accompaniment to the course, you’ll find the modulus operator useful later on.</p>
+<h2 style="font-weight: normal">Comparison operators</h2>
+<p>Swift has a set of operators that perform comparisons on values. For example:</p>
+<pre><code class="language-swift">var a = 1.1
+var b = 2.2
+var c = a + b
+
+c &gt; 3
+c &gt;= 3
+c &gt; 4
+c &lt; 4</code></pre>
+<p>That shows off greater than (<code>&gt;</code>), greater than or equal (<code>&gt;=</code>), and less than (<code>&lt;</code>). In the results window you'll see true, true, false, true – these are Booleans, because the answer to each of these statements can only ever be true or false.</p>
+<p>If you want to check for equality, you can't use = because it already has a meaning: it's used to give a variable a value. So, Swift has an alternative in the form of <code>==</code>, meaning &quot;is equal to.&quot; For example:</p>
+<pre><code class="language-swift">var name = "Tim McGraw"
+name == "Tim McGraw"</code></pre>
+<p>That will show &quot;true&quot; in the results pane. Now, one thing that might catch you out is that in Swift strings are case-sensitive, which means &quot;Tim McGraw&quot;, &quot;TIM MCGRAW&quot; and &quot;TiM mCgRaW&quot; are all considered different. If you use <code>==</code> to compare two strings, you need to make sure they have the same letter case.</p>
+<p>There's one more operator I want to introduce you to, and it's called the &quot;not&quot; operator: <code>!</code>. Yes, it's just an exclamation mark. This makes your statement mean the opposite of what it did. For example:</p>
+<pre><code class="language-swift">var stayOutTooLate = true
+stayOutTooLate
+!stayOutTooLate</code></pre>
+<p>That will print out true, true, false – with the last value there because it flipped the previous true.</p>
+<p>You can also use <code>!</code> with <code>=</code> to make <code>!=</code> or &quot;not equal&quot;. For example:</p>
+<pre><code class="language-swift">var name = "Tim McGraw"
+name == "Tim McGraw"
+name != "Tim McGraw"</code></pre>
+
+<marquee >  <font color="purple" ><h1>END OPERATORS</h1></font></marquee><br>
+</font>
+</body>
+</html>

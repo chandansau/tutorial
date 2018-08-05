@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <center><h1><font color="maroon"><u>INPUT AND OUTPUT</u></font></h1></center>
+    <meta charset="UTF-8">
+    <title>EW Technologies online learning</title>
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<p><font size="4">
+    Python provides numerous<font color="blue"> built-in functions</font> that are readily available to us at the Python prompt.<br>
+    Some of the functions like<mark style="background-color: lightgoldenrodyellow"> input()</mark> and <mark style="background-color: lightgoldenrodyellow">print()</mark> are widely used for standard input and output operations respectively. Let us see the output section first.
+  <br><br>
+    <marquee  onmouseover="this.stop();" onmouseout="this.start();"><font color="blue" size="5">Python Output Using print() function</font></marquee>
+<pre>
+We use the print() function to output data to the standard output device (screen).
+We can also output data to a file, but this will be discussed later. An example use is given below.
+Example
+   1 print('This sentence is output to the screen')
+   2 # Output: This sentence is output to the screen
+   3 a = 5
+   4 print('The value of a is', a)
+   5 # Output: The value of a is 5
+   6 print("""Hello World.
+     python is the easy programmng language.
+     python language use in every platform""")
+    #o/p:
+    Hello World.
+    python is the easy programmng language
+    python language use in every platform
+
+In the second print() statement, we can notice that a space was added between the string and the value of variable a.This is by default, but we can change it.
+
+The actual syntax of the print() function is:
+<font color="blue" size="4">print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)</font>
+Here, objects is the value(s) to be printed.
+The sep separator is used between the values. It defaults into a space character.
+After all values are printed, end is printed. It defaults into a new line.
+The file is the object where the values are printed and its default value is sys.stdout (screen). Here are an example to illustrate this.
+Example
+    print(1,2,3,4)
+    # Output: 1 2 3 4
+
+    print(1,2,3,4,sep='*')
+    # Output: 1*2*3*4
+
+    print(1,2,3,4,sep='#',end='&')
+    # Output: 1#2#3#4&
+</pre>
+<font color="#00008b" size="5">Output Formatting</font><br>
+Sometimes we would like to format our output to make it look attractive. This can be done by using the <mark style="background-color: lightgoldenrodyellow">str.format()</mark> method. This method is visible to any string object.
+<pre>
+Example
+    print('I love {0} and {1}'.format('bread','butter'))
+    # Output: I love bread and butter
+
+    print('I love {1} and {0}'.format('bread','butter'))
+    # Output: I love butter and bread
+
+<font color="#00008b" size="4"> We can even use keyword arguments to format the string.</font>
+
+    >>> print('Hello {name}, {greeting}'.format(greeting = 'Goodmorning', name = 'John'))
+    o/p:Hello John, Goodmorning
+
+</pre>
+<font color="#00008b" size="5">Python Input</font><br>
+To accept input from keyboard, python provides the <mark style="background-color: lightgoldenrodyellow">input()</mark> function.
+<pre>
+Example
+    num = input('Enter a number: ')
+    print(num)
+    o/p:
+    Enter a number: 15
+    15
+____________________________________________________________________________________________________
+    a,b,c,d= [int(i) for i in input('Enter 4 numbers: ').split(",")]
+    print(a,b,c,d)
+    o/p:
+    Enter 4 numbers: 1,2,3,5
+    1, 2, 3, 5
+_____________________________________________________________________________________________________
+    num = [int(i) for i in input('Enter  numbers: ').split(",")]
+    print(num)
+    o/p:
+    Enter a number: 1,2,3,4,5,6,7,8
+    [1, 2, 3, 4, 5, 6, 7, 8]
+_____________________________________________________________________________________________________
+    num = [int(i) for i in input('Enter  numbers: ').split(",")]
+    print(tuple(num))
+    o/p:
+    Enter a number: 1,2,3,4,5
+    (1, 2, 3, 4, 5)
+_____________________________________________________________________________________________________<br>
+</pre>
+
+ <marquee><h1><span style="color: purple">END INPUT AND OUTPUT</span></h1></marquee>
+    <br><br></font>
+</p>
+
+</body>
+</html>

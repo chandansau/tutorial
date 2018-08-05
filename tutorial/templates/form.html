@@ -1,0 +1,59 @@
+{% block content %}
+  <head>   <title>EW Technologies online learning</title>
+
+  <style>
+      body{
+    background-image: url("/media/33.jpg");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+    background-size:100% 100%;
+
+
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    margin: 3px;
+    line-height: 20px;
+}
+
+
+.button {
+    background-color: silver; /* Green */
+    border: 3px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {border-radius: 15px;}
+.button2 {border-radius: 16px;}
+.button3 {border-radius: 20px;}
+</style>
+
+
+  </head><br>
+    <center><h1><font color="red"><u>CONTACT US</u> </font></h1></center>
+    <body>
+    <br>
+    <br>
+   <div align="center"><center style="background-color: lawngreen ; width: 40%; line-height: 60% ; opacity: 0.5;"   >  <form name="form" action="" method="post">
+     {% csrf_token %}
+    {{form.as_p}}
+
+        <button class="button button1"><font color="blue">Submit</font></button>
+        <button class="button button3"><a href="http://127.0.0.1:9999/contactus">Reset</a></button>
+   </form>
+   </center></div>
+
+
+    <div align="center" style="opacity: 0.5;">
+                  <button class="button button2"><a href="http://127.0.0.1:9999/"><font color="red">Home</font></a></button><br>
+
+    </div>
+
+   </body>
+{% endblock %}

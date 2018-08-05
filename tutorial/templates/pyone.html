@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><u><center><h1><font color="maroon">INTRODUCTION</h1></center></u>
+    <meta charset="UTF-8">
+    <title>EW Technologies online learning</title>
+</head>
+<body style="background-color: aliceblue; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+
+<p><font size="4">
+Python was developed by Guido Van Rossum in the year 1991.
+Python is a high level programming language that contains features of functional programming language like C and object oriented programming language like Java.
+    <marquee direction=right onmouseover="this.stop();" onmouseout="this.start();"><font color=blue><u><h3>FEATURES OF PYTHON</h3></u></font></marquee>
+
+<font color="#00008b">Simple:</font>
+Python is a simple programming language because it uses English like sentences in its programs.<br><br>
+<font color="#00008b"> Easy to learn:</font>
+Python uses very few keywords. Its programs use very simple structure.<br><br>
+<font color="#00008b">Open source:</font>
+Python can be freely downloaded from www.python.org website. Its source code can be read, modified and can be used in programs as desired by the programmers.
+
+<br><br><font color="#00008b">High level language:</font>
+High level languages use English words to develop programs. These are easy to learn and use. Like COBOL, PHP or Java, Python also uses English words in its programs and hence it is called high level programming language.
+
+<br><br><font color="#00008b">Dynamically typed:</font>
+In Python, we need not declare the variables. Depending on the value stored in the variable, Python interpreter internally assumes the datatype.
+<br><br><font color="#00008b">Platform independent</font>
+Hence, Python programs are not dependant on any computer with any operating system. We can use Python on Unix, Linux, Windows, Macintosh, Solaris, OS/2, Amiga, AROS, AS/400, etc. almost all operating systems. This will make Python an ideal programming language for any network or Internet.
+<br><br><font color="#00008b"> Portable:</font>
+When a program yields same result on any computer in the world, then it is called a portable program. Python programs will give same result since they are platform independent.
+<br><br><font color="#00008b">Procedure and Object oriented</font>
+Python is a procedure oriented as well as object oriented programming language. In procedure oriented programming languages (e.g. C and Pascal), the programs are built using functions and procedures. But in object oriented languages (e.g. C++ and Java), the programs use classes and objects.An object is anything that exists physically in the real world. An object contains behavior. This behavior is represented by its properties (or attributes) and actions. Properties are represented by variables and actions are performed by methods. So, an object contains variables and methods.
+A class represents common behavior of a group of objects. It also contains variables and methods. But a class does not exist physically.
+A class can be imagined as a model for creating objects. An object is an instance (physical form) of a class.
+
+<br><br><font color="#00008b">Interpreted:</font>
+First, Python compiler translates the Python program into an intermediate code called byte code. This byte code is then executed by PVM. Inside the PVM, an interpreter converts the byte code instructions into machine code so that the processor will understand and run that machine code.
+<br><br><font color="#00008b">Extensible:</font>
+There are other flavors of Python where programs from other languages can be integrated into Python. For example, Jython is useful to integrate Java code into Python programs and run on JVM (Java Virtual Machine). Similarly IronPython is useful to integrate .NET programs and libraries into Python programs and run on CLR (Common Language Runtime).
+<br><br><font color="#00008b">Embeddable:</font>
+Several applications are already developed in Python which can be integrated into other programming languages like C, C++, Delphi, PHP, Java and .NET. It means programmers can use these applications for their advantage in various software projects.
+<br><br><font color="#00008b">Huge library:</font>
+Python has a big library that contains modules which can be used on any Operating system.
+<br><br><font color="#00008b">Scripting language:</font>
+A scripting language uses an interpreter to translate the source code into machine code on the fly (while running). Generally, scripting languages perform supporting tasks for a bigger application or software. Python is considered as a scripting language as it is interpreted and it is used on Internet to support other softwares.
+<br><br><font color="#00008b">Database connectivity</font>
+A database represents software that stores and manipulates data. Python provides interfaces to connect its programs to all major databases like Oracle, Sybase, SQL Server or MySql.
+<br><br><font color="#00008b">Scalable:</font>
+A program would be scalable if it could be moved to another Operating system or hardware and take full advantage of the new environment in terms of performance.
+<br><br><font color="#00008b">Batteries included:</font>
+The huge library of Python contains several small applications (or small packages) which are already developed and immediately available to programmers. These libraries are called ‘batteries included’. Some interesting batteries or packages are given here:
+argparse is a package that represents command-line parsing library.
+boto is Amazon web services library.
+CherryPy is a Object-oriented HTTP framework.
+cryptography offers cryptographic techniques for the programmers
+Fiona reads and writes big data files
+jellyfish is a library for doing approximate and phonetic matching of strings.
+matplotlib is a library for electronics and electrical drawings.
+mysql-connector-python is a driver written in Python to connect to MySQL database.
+numpy is a package for processing arrays of single or multidimensional type.
+pandas is a package for powerful data structures for data analysis, time series and statistics.
+Pillow is a Python imaging library.
+pyquery represents jquery-like library for Python.
+scipy is the scientific library to do scientific and engineering calculations.
+Sphinx is the Python documentation generator.
+sympy is a package for Computer algebra system (CAS) in Python.
+w3lib is a library of web related functions.
+whoosh contains fast and pure Python full text indexing, search and spell checking library.
+To know the entire list of packages included in Python, one can visit: https://www.pythonanywhere.com/batteries_included/
+    <marquee direction=right onmouseover="this.stop();" onmouseout="this.start();"><h3><font color="#00008b"><u>PVM</u></font></h3></marquee>
+A Python program contains source code (first.py) that is first compiled by Python compiler to produce byte code (first.pyc). This byte code is given to Python Virtual Machine (PVM) which converts the byte code to machine code. This machine code is run by the processor and finally the results are produced.
+    <br><br><center><img src= "/media/b3.JPG" alt="Python Friends Site Photo" width=60% height=120 ></center><br><br>
+<font color="#00008b">Python Virtual Machine (PVM)</font> is a software that contains an interpreter that converts the byte code into machine code.
+PVM is most often called Python interpreter. The PVM of PyPy contains a compiler in addition to the interpreter. This compiler is called Just In Time (JIT) compiler which is useful to speed up execution of the Python program.
+Memory management by PVM
+Memory allocation and deallocation are done by PVM during runtime. Entire memory is allocated on heap.
+We know that the actual memory (RAM) for any program is allocated by the underlying Operating system. On the top of the Operating system, a raw memory allocator oversees whether enough memory is available to it for storing the objects (ex: integers, strings, functions, lists, modules etc). On the top of the raw memory allocator, there are several object-specific allocators operate on the same heap. These memory allocators will implement different types of memory management policies depending on the type of the objects. For example, an integer number should be stored in memory in one way and a string should be stored in a different way. Similarly, when we deal with tuples and dictionaries, they should be stored differently. These issues are taken care by object-specific memory allocators.
+<br><center><img src= "/media/b2.JPG" alt="Python Friends Site Photo" width=60% height=60% ></center><br>
+<br>
+<font color="#00008b">Garbage collection</font>
+A module represents Python code that performs specific task. Garbage collector is a module in Python that is useful to delete objects from memory which are not used in the program. The module that represents the garbage collector is named as gc. Garbage collector in the simplest way maintains a count for each object regarding how many times that object is referenced (or used). When an object is referenced twice, its reference count will be 2. When an object has some count, it is being used in the program and hence garbage collector will not remove it from memory. When an object is found with a reference count 0, garbage collector will understand that the object is not used by the program and hence it can be deleted from memory. Hence, the memory allocated for that object is deallocated or freed.
+<br><font color="#00008b">Frozen Binaries:</font>
+When a software is developed in Python, there are two ways to provide the software to the end user. The first way is to provide the .pyc files to the user. The user will install PVM in his computer and run the byte code instructions of the .pyc files.
+The other way is to provide the .pyc files, PVM along with necessary Python library. In this method, all the .pyc files, related Python library and PVM will be converted into a single executable file (generally with .exe extension) so that the user can directly execute that file by double clicking on it. In this way, converting the Python programs into true executables is called frozen binaries. But frozen binaries will have more size than that of simple .pyc files since they contain PVM and library files also.
+For creating Frozen binaries, we need to use other party softwares. For example, py2exe is a software that produces frozen binaries for Windows operating system. We can use pyinstaller for UNIX or LINUX. Freeze is another program from Python organization to generate frozen binaries for UNIX.
+    <marquee onmouseover="this.stop();" onmouseout="this.start();"><font color="#00008b"><h3><u>DATA TYPES</u></h3></font></marquee>
+<h4><font color="#00008b">Built-in datatypes</font></h4>
+The built-in datatypes are of 5 types:<br>
+□ None Type<br>
+□ Numeric types<br>
+□ Sequences<br>
+□ Sets<br>
+□ Mappings<br><br>
+>None type: an object that does not contain any value.<br>
+>Numeric types: int, float, complex.<br>
+>Boolean type: bool.<br>
+>Sequences: str, bytes, bytearray, list, tuple, range.<br><br>
+
+<font color="#00008b">int type:</font> represents integers like 12, 100, -55.<br><br>
+<font color="#00008b">float type:</font> represents float numbers like 55.3, 25e3.<br><br>
+<font color="#00008b">complex type:</font> represents complex numbers like 3+5j or 3-10.5J. Complex numbers will be in the form of a+bj or a+bJ. Here ‘a’ is called real part and ‘b’ is called ‘imaginary part’ and ‘j’ or ‘J’ indicates √-1.
+<br>NOTE:<br>
+<pre>
+Binary numbers are represented by a prefix 0b or 0B. Ex: 0b10011001<br>
+
+Hexadecimal numbers are represented by a prefix 0x or 0X. Ex: 0X11f9c<br>
+Octal numbers are represented by a prefix 0o or 0O. Ex: 0o145.<br>
+bool type: represents any of the two boolean values, True or False.<br>
+Example
+    a = 10>5 # here a is treated as bool type variable.
+    print(a) #displays True<br>
+NOTE:<br>
+1. To convert a float number into integer, we can use int() function. Ex: int(num)<br>
+2. To convert an integer into float, we can use float() function.<br>
+3. bin() converts a number into binary. Ex: bin(num)<br>
+4. oct() converts a number into octal.<br>
+5. hex() converts a number into hexadecimal.
+</pre>
+<marquee direction=right onmouseover="this.stop();" onmouseout="this.start();"><font color="#00008b"><h3>STRINGS</h3></font><br></marquee>
+str datatype: represents string datatype. A string is enclosed in single quotes or double quotes.<br>
+Example
+s1 = "Welcome"<br>
+s2 = 'Welcome'<br>
+A string occupying multiple lines can be inserted into triple single quotes or triple double quotes.<br>
+Example:
+<br>s1 = ''' This is a special training on Python<br>
+programming that<br>
+gives insights into Python language.'''<br>
+To display a string with single quotes.<br>
+Example: s2 = """This is a book 'on Core Python' programming"""<br>
+To find length of a string, use len() function.<br>
+Example: s3 = 'Core Python'<br>
+n = len(s3)<br>
+print(n) -> 11<br>
+We can do indexing, slicing and repetition of strings.<br>
+Example: s = “Welcome to Core Python”<br>
+print(s) -> Welcome to Core Python<br>
+print(s[0]) -> W<br>
+print(s[0:7]) -> Welcome<br>
+print(s[:7]) -> Welcome<br>
+print(s[1:7:2]) -> ecm<br>
+print(s[-1] -> n<br>
+print(s[-3:-1]) -> ho<br>
+print(s[1]*3) -> eee<br>
+print(s*2) ->Welcome to CorePython Welcome to CorePython<br>
+Remove spaces using rstrip(), lstrip(), strip() methods.<br>
+Example: name = “ Vijay Kumar “<br>
+print(name.strip())<br>
+We can find substring position in a string using find() method. It returns -1 if not found.<br>
+Example: n = str.find(sub, 0, len(str))<br>
+We can count number of substrings in a string using count() method. Returns 0 if not found.<br>
+Example: n = str.count(sub)<br>
+We can replace a string s1 with another string s2 in a main string using replace() method.<br>
+Example: str.replace(s1, s2)<br>
+We can change the case of a string using upper(), lower(), title() methods.<br>
+Example: str.upper()<br><br>
+<marquee onmouseover="this.stop();" onmouseout="this.start();"><font color="#00008b"><h3>CHARACTERS</h3></font></marquee>
+There is no datatype to represent a single character in Python. Characters are part of str datatype.<br>
+Example:<br>
+str = "Hello"<br>
+print(str[0])<br>
+
+for i in str: print(i)<br>
+H<br>
+e<br>
+l<br>
+l<br>
+o<br><br><br>
+<marquee direction=right onmouseover="this.stop();" onmouseout="this.start();"><font color="#00008b"><h3>BYTES AND BYTEARRAY</h3></font></marquee>
+bytes datatype: represents a group of positive integers in the range of 0 to 255 just like an array. The elements of bytes type cannot be modified.<br>
+Example: arr = [10, 20, 55, 100, 99]<br>
+x = bytes(arr)<br>
+for i in x:<br>
+print(i)<br>
+10<br>
+20<br>
+55<br>
+100<br>
+99<br><br>
+
+<marquee  onmouseover="this.stop();" onmouseout="this.start();"><font color="#00008b"><h3>LISTS</h3></font></marquee>
+
+A list is similar to an array that can store a group of elements. A list can store different types of elements and can grow dynamically in memory. A list is represented by square braces [ ]. List elements can be modified.
+<br>Example:<br>
+lst = [10, 20, 'Ajay', -99.5]<br>
+print(lst[2])<br>
+Ajay<br>
+To create an empty list.<br>
+lst = *+ # then we can append elements to this list as lst.append(‘Vinay’)<br>
+NOTE:<br>
+Indexing, slicing and repetition are possible on lists.<br>
+print(lst[1])<br>
+20<br>
+
+
+
+Example<br>
+Description:<br>
+lst.index(x) =========> Returns the first occurrence of x in lst.<br>
+lst.count(x) =========> Returns the number of occurrences of x in lst.<br>
+lst.insert(i, x)======> Inserts x into lst in the position specified by i.<br>
+lst.copy()============> Copies all elements of lst into a new list and returns it.<br>
+lst.extend(lst1)======> Appends lst1 to lst.<br>
+lst.sort()============> Sorts all elements into ascending order.<br>
+lst.sort(reverse=True)=> Sorts all elements into descending order.<br>
+lst.reverse()==========> Reverses the sequence of elements.<br>
+
+<marquee  onmouseover="this.stop();" onmouseout="this.start();"><font color="#00008b"><h3>TUPLES</h3></font></marquee>
+A tuple is similar to a list but its elements cannot be modified. A tuple is represented by parentheses ( ).<br>
+Indexing, slicing and repetition are possible on tuples also.<br>
+
+Example:
+tpl=( ) # creates an empty tuple<br>
+tpl=(10, ) # with only one element – comma needed after the element<br>
+tpl = (10, 20, -30, "Raju")<br>
+print(tpl)
+(10, 20, -30, 'Raju')<br>
+tpl[0]=-11 # error<br>
+print(tpl[0:2])<br>
+(10, 20)<br>
+tpl = tpl*2<br>
+print(tpl)<br>
+(10, 20, -30, 'Raju', 10, 20, -30, 'Raju')<br>
+NOTE: len(), count(), index(), max(), min() functions are same in case of tuples also.<br>
+We cannot use append(), extend(), insert(), remove(), clear() methods on tuples.<br>
+To sort the elements of a tuple, we can use sorted() method.<br>
+sorted(tpl) # sorts all elements into ascending order sorted(tpl, reverse=True) # sorts all elements into descending order<br>
+To convert a list into tuple, we can use tuple() method.<br>
+tpl = tuple(lst)<br>
+<marquee direction=right onmouseover="this.stop();" onmouseout="this.start();"><font color="#00008b"><h3>RANGE DATATYPE</h3></font></marquee>
+range represents a sequence of numbers. The numbers in the range cannot be modified. Generally, range is used to repeat a for loop for a specified number of times.
+<br>
+Example: we can create a range object that stores from 0 to 4 as:<br>
+r = range(5)<br>
+print(r[0]) -> 0<br>
+for i in r: print(i)<br>
+0<br>
+1<br>
+2<br>
+3<br>
+4<br><br>
+<marquee  onmouseover="this.stop();" onmouseout="this.start();"><font color="#00008b"><h3>SETS</h3></font></marquee>
+A set datatype represents unordered collection of elements. A set does not accept duplicate elements where as a list accepts duplicate elements. A set is written using curly braces { }. Its elements can be modified.
+<br>Ex:<br>
+s = {1, 2, 3, "Vijaya"}<br>
+print(s)<br>
+{1, 2, 3, 'Vijaya'}<br>
+NOTE: Indexing, slicing and repetition are not allowed in case of a set.<br>
+To add elements into a set, we should use update() method as:<br>
+s.update([4, 5])<br>
+print(s)<br>
+{1, 2, 3, 4, 5, 'Vijaya'}<br>
+To remove elements from a set, we can use remove() method as:<br>
+s.remove(5)<br>
+print(s)<br>
+{1, 2, 3, 4, 'Vijaya'}<br>
+A frozenset datatype is same as set type but its elements cannot be modified.<br>
+Example:<br>
+s = {1, 2, -1, 'Akhil'} -> this is a set<br>
+s1 = frozenset(s) -> convert it into frozenset<br>
+for i in s1: print(i)<br>
+1<br>
+2<br>
+Akhil<br>
+-1<br>
+NOTE: update() or remove() methods will not work on frozenset.<br><br>
+
+<marquee direction=right onmouseover="this.stop();" onmouseout="this.start();"><font color="#00008b"><h3>MAPPING DATATYPES</h3></font></marquee>
+A map indicates elements in the form of key – value pairs. When key is given, we can retrieve the associated value. A dict datatype (dictionary) is an example for a ‘map’.
+<br>d = {10: 'kamal', 11:'Subbu', 12:'Sanjana'}<br>
+print(d)<br>
+{10: 'kamal', 11: 'Subbu', 12: 'Sanjana'}<br>
+keys() method gives keys and values() method returns values from a dictionary.<br>
+k = d.keys()<br>
+for i in k: print(i)<br>
+10<br>
+11<br>
+12<br>
+for i in d.values(): print(i)<br>
+kamal<br>
+Subbu<br>
+Sanjana<br>
+To display value upon giving key, we can use as:<br>
+Example: d = {10: 'kamal', 11:'Subbu', 12:'Sanjana'}<br>
+d*10+ gives ‘kamal’<br>
+To create an empty dictionary, we can use as:<br>
+d = {}<br>
+Later, we can store the key and values into d, as:<br>
+d*10+ = ‘Kamal’<br>
+d*11+ = ‘Pranav’<br>
+We can update the value of a key, as: d[key] = newvalue.<br>
+Example: d*10+ = ‘Subhash’<br>
+We can delete a key and corresponding value, using del function.<br>
+Example: del d[11] will delete a key with 11 and its value also.<br><br>
+
+<marquee direction=right onmouseover="this.stop();" onmouseout="this.start();"><font color="#00008b"><h3>Literals in Python</h3></font></marquee>
+A literal is a constant value that is stored into a variable in a program.<br>
+a = 15<br>
+Here, ‘a’ is the variable into which the constant value ‘15’ is stored. Hence, the value 15 is called ‘literal’. Since 15 indicates integer value, it is called ‘integer literal’.
+<br>Example: a = ‘Srinu’==> here ‘Srinu’ is called string literal.<br>
+Example: a = True ==>here, True is called Boolean type literal.<br><br>
+
+<u><font color="#00008b"><h3>User-defined datatypes</h3></font></u><br>
+The datatypes which are created by the programmers are called ‘user-defined’ datatypes. For example, an array, a class, or a module is user-defined datatypes. We will discuss about these datatypes in the later chapters.
+<br><br><u><font color="#00008b"><h3>Constants in Python:</h3></font></u>
+A constant is similar to variable but its value cannot be modified or changed in the course of the program execution. For example, pi value 22/7 is a constant. Constants are written using caps as PI.
+<u><font color="#00008b"><h3>Identifiers and Reserved words</h3></font></u>
+An identifier is a name that is given to a variable or function or class etc. Identifiers can include letters, numbers, and the underscore character ( _ ). They should always start with a nonnumeric character. Special symbols such as ?, #, $, %, and @ are not allowed in identifiers. Some examples for identifiers are salaray, name11, gross_income, etc.
+<br>Reserved words are the words which are already reserved for some particular purpose in the Python language. The names of these reserved words should not be used as identifiers. The following are the reserved words available in Python:
+<br><strong>|and | del| from  | nonlocal| try|
+|as |elif| global| not| while|<br>
+|assert |else |if |or |with|
+|break |except |import| pass| yield|<br>
+|class |exec |in |print| False
+|continue| finally |is| raise| True|<br>
+    |def |for |lambda |return|</strong><br><br>
+
+<marquee  onmouseover="this.stop();" onmouseout="this.start();"><font color="#00008b"><h3>Boolean operators</h3></font></marquee>
+Boolean operators act upon ‘bool’ type values and they provide ‘bool’ type result. So the result will be again either True or False.
+x = True, y = False
+<table border="1"><tr>
+    <td>Operator</td>
+    <td>Example</td>
+    <td>Meaning</td>
+    <td>Result</td>
+</tr>
+    <tr>
+        <td>and</td>
+        <td>x and y</td>
+        <td>Boolean and operator. If both x and y are True, then it returns True, otherwise False.</td>
+
+        <td>False</td>
+    </tr>
+    <tr>
+        <td>or</td>
+        <td>x or y</td>
+        <td>Boolean or operator. If either x or y is True, then it returns True, else False.</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td>not</td>
+        <td>not x</td>
+        <td>Boolean not operator. If x is True, it returns False, else True.</td>
+        <td>False</td>
+    </tr>
+</table>
+
+<marquee direction=right onmouseover="this.stop();" onmouseout="this.start();"><font color="#00008b"><h3>input() function for accepting keyboard input</h3></font><br></marquee>
+Example<br>
+str = input()<br>
+str = input("Enter your name= ")<br>
+a = int(input("Enter int number: ")<br>
+a = float(input("Enter a float number: ")<br>
+a,b,c = [int(x) for x in input("Enter three numbers: ").split()]<br>
+a,b,c = [int(x) for x in input('Enter a,b,c: ').split(',')]<br>
+a,b,c = [x for x in input('Enter 3 strings: ').split(',')]<br>
+lst = [float(x) for x in input().split(',')]<br>
+lst = eval(input(‘Enter a list: ‘))<br>
+
+<marquee><h1><span style="color: purple">END INTRODUCTION</span></h1></marquee>
+    <br></font>
+</p>
+</body>
+</html>

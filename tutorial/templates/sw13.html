@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EW Technologies online learning</title>
+    <center><h1><font color="maroon"><u>OPTIONAL CHAINING</u></font></h1></center>
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'><font size="4">
+
+    <p>Working with optionals can feel a bit clumsy sometimes, and all the unwrapping and checking can become so onerous that you might be tempted to throw some exclamation marks to force unwrap stuff so you can get on with work. Be careful, though: if you force unwrap an optional that doesn't have a value, your code will crash.</p>
+<p>Swift has two techniques to help make your code less complicated. The first is called optional chaining, which lets you run code only if your optional has a value. Put the below code into your playground to get us started:</p>
+<pre><code class="language-swift">func albumReleased(year: Int) -&gt; String? {
+    switch year {
+    case 2006: return "Taylor Swift"
+    case 2008: return "Fearless"
+    case 2010: return "Speak Now"
+    case 2012: return "Red"
+    case 2014: return "1989"
+    default: return nil
+    }
+}
+
+let album = albumReleased(year: 2006)
+print("The album is \(album)")</code></pre>
+<p>That will output &quot;The album is Optional(&quot;Taylor Swift&quot;)&quot; into the results pane.</p>
+<p>If we wanted to convert the return value of <code>albumReleased()</code> to be uppercase letters (that is, &quot;TAYLOR SWIFT&quot; rather than &quot;Taylor Swift&quot;) we could call the <code>uppercased()</code> method of that string. For example:</p>
+<pre><code class="language-swift">let str = "Hello world"
+print(str.uppercased())</code></pre>
+<p>The problem is, <code>albumReleased()</code> returns an optional string: it might return a string or it might return nothing at all. So, what we really mean is, &quot;if we got a string back make it uppercase, otherwise do nothing.&quot; And that's where optional chaining comes in, because it provides exactly that behavior.</p>
+<p>Try changing the last two lines of code to this:</p>
+<pre><code class="language-swift">let album = albumReleased(year: 2006)?.uppercased()
+print("The album is \(album)")</code></pre>
+<p>Note that there's a question mark in there, which is the optional chaining: everything after the question mark will only be run if everything before the question mark has a value. This doesn't affect the underlying data type of <code>album</code>, because that line of code will now either return nil or will return the uppercase album name – it's still an optional string.</p>
+<p>Your optional chains can be as long as you need, for example:</p>
+<pre><code class="language-swift">let album = albumReleased(year: 2006)?.someOptionalValue?.someOtherOptionalValue?.whatever</code></pre>
+<p>Swift will check them from left to right until it finds nil, at which point it stops.</p>
+<font color="#00008b" size="6">The nil coalescing operator</font>
+<p>This simple Swift feature makes your code much simpler and safer, and yet has such a grandiose name that many people are scared of it. This is a shame, because the nil coalescing operator will make your life easier if you take the time to figure it out!</p>
+<p>What it does is let you say &quot;use value A if you can, but if value A is nil then use value B.&quot; That's it. It's particularly helpful with optionals, because it effectively stops them from being optional because you provide a non-optional value B. So, if A is optional and has a value, it gets used (we have a value.) If A is present and has no value, B gets used (so we still have a value). Either way, we definitely have a value.</p>
+<p>To give you a real context, try using this code in your playground:</p>
+<pre><code class="language-swift">let album = albumReleased(year: 2006) ?? "unknown"
+print("The album is \(album)")</code></pre>
+<p>That double question mark is the nil coalescing operator, and in this situation it means &quot;if <code>albumReleased()</code> returned a value then put it into the <code>album</code> variable, but if <code>albumReleased()</code> returned nil then use 'unknown' instead.&quot;</p>
+<p>If you look in the results pane now, you'll see &quot;The album is Taylor Swift&quot; printed in there – no more optionals. This is because Swift can now be sure it will get a real value back, either because the function returned one or because you're providing &quot;unknown&quot;. This in turn means you don't need to unwrap anything or risk crashes – you're guaranteed to have real data to work with, which makes your code safer and easier to work with.</p>
+
+</font>
+<marquee>  <font color="purple" ><h1>END OPTIONAL CHAINING</h1></font></marquee><br>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EW Technologies online learning</title>
+ <center><h1><font color="maroon"><u>CONDITIONAL STATEMENTS</u></font></h1></center>
+
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<font size="4">
+                    <p>Sometimes you want code to execute only if a certain condition is true, and in Swift that is represented primarily by the <code>if</code> and <code>else</code> statements. You give Swift a condition to check, then a block of code to execute if that condition is true.</p>
+<p>You can optionally also write <code>else</code> and provide a block of code to execute if the condition is false, or even <code>else if</code> and have more conditions. A &quot;block&quot; of code is just a chunk of code marked with an open brace – <code>{</code> – at its start and a close brace – <code>}</code> – at its end.</p>
+<p>Here's a basic example:</p>
+<pre><code class="language-swift">var action: String
+var person = "hater"
+
+if person == "hater" {
+    action = "hate"
+}</code></pre>
+<p>That uses the <code>==</code> (equality) operator introduced previously to check whether the string inside <code>person</code> is exactly equivalent to the string &quot;hater&quot;. If it is, it sets the <code>action</code> variable to &quot;hate&quot;. Note that open and close braces, also known by their less technical name of &quot;curly brackets&quot; – that marks the start and end of the code that will be executed if the condition is true.</p>
+<p>Let's add <code>else if</code> and <code>else</code> blocks:</p>
+<pre><code class="language-swift">var action: String
+var person = "hater"
+
+if person == "hater" {
+    action = "hate"
+} else if person == "player" {
+    action = "play"
+} else {
+    action = "cruise"
+}</code></pre>
+<p>That will check each condition in order, and only one of the blocks will be executed: a person is either a hater, a player, or anything else.</p>
+    <marquee direction=right onmouseover="this.stop();" onmouseout="this.start();"><font color="#00008b" size="6">Evaluating multiple conditions</font></marquee>
+<p>You can ask Swift to evaluate as many conditions as you want, but they all need to be true in order for Swift to execute the block of code. To check multiple conditions, use the <code>&amp;&amp;</code> operator – it means &quot;and&quot;. For example:</p>
+<pre><code class="language-swift">var action: String
+var stayOutTooLate = true
+var nothingInBrain = true
+
+if stayOutTooLate &amp;&amp; nothingInBrain {
+    action = "cruise"
+}</code></pre>
+<p>Because <code>stayOutTooLate</code> and <code>nothingInBrain</code> are both true, the whole condition is true, and <code>action</code> gets set to &quot;cruise.&quot; Swift uses something called short-circuit evaluation to boost performance: if it is evaluating multiple things that all need to be true, and the first one is false, it doesn't even bother evaluating the rest.</p>
+    <marquee><font color="#00008b" size="6">Looking for the opposite of truth</font></marquee>
+<p>This might sound deeply philosophical, but actually this is important: sometimes you care whether a condition is not true, i.e. is false. You can do this with the <code>!</code> (not) operator that was introduced earlier. For example:</p>
+<pre><code class="language-swift">if !stayOutTooLate &amp;&amp; !nothingInBrain {
+    action = "cruise"
+}</code></pre>
+<p>This time, the <code>action</code> variable will only be set if both <code>stayOutTooLate</code> and <code>nothingInBrain</code> are false the <code>!</code> has flipped them around.</p>
+</font>
+<marquee >  <font color="purple" ><h1>END CONDITIONAL STATEMENTS</h1></font></marquee><br>
+
+</body>
+</html>

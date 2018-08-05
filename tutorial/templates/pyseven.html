@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <center><h1><font color="maroon"><u>FUNCTIONS</u></font></h1></center>
+    <meta charset="UTF-8">
+    <title>EW Technologies online learning</title>
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<p>    <font size="4"><br>
+A function is a block of organized, reusable code that is used to perform a single, related action. Functions provide better modularity for your application and a high degree of code reusing.
+
+    <br><marquee ><font color="#00008b" size="5">Defining a Function</font></marquee>
+A function in Python is defined by a def statement. The general syntax looks like this:
+<pre>
+    def function-name(Parameter list):
+        statements,   # i.e. the function body
+
+    Eg.<font style="background-color: yellowgreen"> Program for Hello World</font>
+    ___________________________________________________
+
+    Example
+    def Pro():
+        print("Hello World")
+    Pro()                      o/p: Hello World
+    ___________________________________________________
+    def Pro(a,b):
+        print("Addition is:\t")
+        return(a+b)
+    c=Pro(10,15)
+    print(c)                 #o/p:Addition is:
+                                  25
+    ___________________________________________________
+    Example
+    def Pro(a,b):
+        print("Addition is:\t",a+b)
+        print("Sub\t",a-b)
+        print("Mul:\t",a*b)
+        print("div:\t",a//b)
+    Pro(15,5)
+    o/p:
+    Addition is:	 20
+    Sub	 10
+    Mul:	 75
+    div:	 3
+    ____________________________________________________
+    <font style="background-color: yellowgreen"> # Reverse and Palindrome number</font>
+    def mypro(num):
+        temp = num
+        rev=0
+        while(temp> 0):
+            r= temp % 10;
+            rev =(( rev * 10) + r)
+            #print("Its reverse is ", rev)
+            temp =temp// 10
+            #print("now temp number is ", temp)
+        print("Reverse is:",rev)
+        if (num == rev):
+            print("Number is a palindrome ")
+        else:
+            print("Number is not a palindrome ")
+        return;
+    num=int(input("Enter a Value"))
+    mypro(num)
+    o/p:
+    Enter a Value153
+    Reverse is: 351
+    Number is not a palindrome
+    ___________________________________________________
+
+    <font style="background-color: yellowgreen"># Reverse and Palindrome string</font>
+
+    def pro():
+        a=input("Enter String\t")
+        b=a[-1::-1]
+        print("main string is:\t",b)
+        if(a==b):
+            print("palindrom")
+        else:
+            print("not palindrom")
+    pro()
+
+    o/p:
+    Enter String	mam
+    main string is:	 mam
+    palindrom
+    ______________________________________________________
+    def pro():
+        a=list(input("Enter String\t"))
+        b=a[-1::-1]
+        print("main string is:\t",a)
+        print("Reverse is:\t",b)
+        if(a==b):
+            print("palindrom")
+        else:
+            print("not palindrom")
+
+    pro()
+    o/p:
+    Enter String	121
+    main string is:	 ['1', '2', '1']
+    Reverse is:	 ['1', '2', '1']
+    palindrom
+    ________________________________________________________
+    <font style="background-color: yellowgreen"># Armstrong number</font>
+    def mypro():
+        num=int(input("i/p number"))
+        temp = num
+        rev=0
+        while(temp>0):
+            r= temp % 10;
+            rev =rev+(r*r*r)
+          #  print("Its reverse is ", rev)
+            temp =temp// 10
+           # print("temp  number is = ", temp)
+
+        if (num == rev):
+            print("Number is a Armstrong")
+        else:
+            print("Number is not Armstrong ")
+        return;
+
+    mypro()
+
+    o/p:
+    i/p number153
+    Number is a Armstrong
+    ______________________________________________________________
+    <font style="background-color: yellowgreen">    # Fibonacci Sequence</font>
+    def pro():
+        a,b=0,1
+        print("Sequence\' is")
+        for i in range(0,6):
+            print(a)
+            a,b=b,a+b
+        return()
+    pro()
+    ________________________________________________________________
+    <font style="background-color: yellowgreen">  #Count the no. of line, word, character and space</font>
+    def pro():
+        s = 'I am having a very nice day.\n i am cool.\n and fine'
+        x=len(s.split())
+        print("no. of word :",x)
+        y=len(s.split('\n'))
+        x=len(s.split())
+        print("no. of line :",y)
+        z=s.count(" ")
+        print("no of space :",z)
+        print("no. of char in str=",s.count("") - s.count(" "))  # number of charecter in a string
+        return
+
+    pro()
+
+    o/p:
+    no. of word : 12
+    no. of line : 3
+    no of space : 11
+    no. of char in str= 40
+    ___________________________________________________________________
+</pre>
+<marquee  direction=right onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="5">Formal and Actual Arguments:</font></marquee><br>
+<pre>
+You can call a function by using the following types of formal arguments −
+    => Positional arguments
+    => Keyword arguments
+    => Default arguments
+    => Variable-length arguments
+
+</pre>
+<font color="#00008b" size="5"> Positional arguments:</font><br>
+Positional arguments are the arguments passed to a function in correct positional order. Here, the number of arguments in the function call should match exactly with the function definition.
+<pre>
+    Example
+    def Add(s1,s2):
+        s3=s1+" "+s2
+        print(s3)
+        return;
+    Add("Jai","Hind")
+
+    o/p:  Jai Hind
+</pre>
+
+<font color="#00008b" size="5"> Keyword arguments:</font><br>
+Keyword arguments are arguments that identify the parameters by their names.
+<pre>
+    Example
+    def Add(item,price):
+        print(item+" price is",price)
+        return;
+    Add(item="suger",price=48)
+</pre>
+<font color="#00008b" size="5"> Default arguments:</font><br>
+A default argument is an argument that assumes a default value if a value is not provided in the function call for that argument.
+<pre>
+    Example
+    def Add(item="Oil",price=53):
+        print(item+" price is",price)
+        return;
+    Add(item="Suger")
+
+    o/p:
+    Suger price is 53
+</pre>
+<font color="#00008b" size="5"> Variable-length arguments:</font><br>
+You may need to process a function for more arguments than you specified while defining the function. These arguments are called variable-length arguments.The special syntax *args in function definitions in python is used to pass a variable number of arguments to a function. It is used to pass a non-keyworded, variable-length argument list.
+<pre>
+    def Add(*arg,s1):
+        print(s1 +" Total Marks:\t",sum(arg))
+        return;
+    Add(34,58,46,68,82,s1="Lee")
+
+    o/p:
+    Lee Total Marks:	 288
+</pre>
+<marquee  direction=left onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="5">Anonymous Functions or Lambdas:</font></marquee><br>
+We can create anonymous functions, known as lambda functions. Lambda functions are different from normal Python functions, they origin from Lambda Calculus. It allows you to write very short functions.
+<pre>
+    Example
+    f =( lambda x, y : x + y)
+    v=f(2,5)
+    print(v)  o/p: 7
+
+    Example
+    <font style="background-color: yellowgreen">To create a lambda function that returns a square value of a given number.</font>
+    f =( lambda x : x*x)
+    v=f(6)
+    print(v)    o/p:  6
+
+
+<font color="red" size="5">Lambda functions are mainly used in combination with the functions filter(), map() and reduce().</font>
+
+<font color="#00008b"size="5">filter():</font>
+The function filter(function, list) offers an elegant way to filter out all the elements of a list, for which the function function returns True.
+
+    Example
+    <font style="background-color: yellowgreen">filter out the even numbers from the list</font>
+
+    lst = [1,2,3,4,5,6,7,8,9,10]
+    newLst = list(filter(lambda x: (x % 2 == 0), lst))
+    print(newLst)
+
+    o/p:  [2, 4, 6, 8, 10]
+
+<font color="#00008b"size="5">map():</font>
+It semilar to the filter() function but it acts on each element of the sequence and perhaps changes the elements.
+
+    Example
+    lst = [1,2,3,4]
+    lst1 = tuple(map(lambda x:(x*x), lst))
+    print(lst1)
+    o/p:  (1, 4, 9, 16)
+
+<font color="#00008b"size="5">reduce():</font>
+The function reduce(func, seq) continually applies the function func() to the sequence seq. It returns a single value.
+
+    Example
+    from functools import *
+    a=reduce(lambda x,y: x+y, [47,11,42,13])
+    print(a)
+      o/p:   113
+
+</pre>
+
+<marquee >  <font color="purple" ><h1>END FUNCTIONS</h1></font></marquee><br>
+
+</font>
+</pre>
+</body>
+</html>

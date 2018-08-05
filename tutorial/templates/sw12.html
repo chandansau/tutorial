@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EW Technologies online learning</title>
+    <center><h1><font color="maroon"><u>OPTIONALS</u></font></h1></center>
+
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'><font size="4">
+<font size="4">  <p>Swift is a very safe language, by which I mean it works hard to ensure your code never fails in surprising ways.</p>
+<p>One of the most common ways that code fails is when it tries to use data that is bad or missing. For example, imagine a function like this:</p>
+<pre><code class="language-swift">func getHaterStatus() -&gt; String {
+    return "Hate"
+}</code></pre>
+<p>That function doesn't accept any parameters, and it returns a string: &quot;Hate&quot;. But what if today is a particularly sunny day, and those haters don't feel like hating – what then? Well, maybe we want to return nothing: this hater is doing no hating today. </p>
+<p>Now, when it comes to a string you might think an empty string is a great way to communicate nothing, and that might be true sometimes. But how about numbers – is 0 an &quot;empty number&quot;? Or -1?</p>
+<p>Before you start trying to create imaginary rules for yourself, Swift has a solution: optionals. An optional value is one that might have a value or might not. Most people find optionals hard to understand, and that’s OK – I’m going to try explaining it in several ways, so hopefully one will work.</p>
+<p>For now, imagine a survey where you ask someone, “On a scale of 1 to 5 how awesome is Taylor Swift?” – what would someone answer if they had never heard of her? 1 would be unfairly slating her, and 5 would be praising her when they had no idea who Taylor Swift was. The solution is optionals: “I don’t want to provide a number at all.”</p>
+<p>When we used <code>-&gt; String</code> it means &quot;this will definitely return a string,&quot; which means this function <em>cannot</em> return no value, and thus can be called safe in the knowledge that you'll always get a value back that you can use as a string. If we wanted to tell Swift that this function might return a value or it might not, we need to use this instead:</p>
+<pre><code class="language-swift">func getHaterStatus() -&gt; String? {
+    return "Hate"
+}</code></pre>
+<p>Note the extra question mark: <code>String?</code> means “optional string.” Now, in our case we're still returning “Hate” no matter what, but let's go ahead and modify that function further: if the weather is sunny, the haters have turned over a new leaf and have given up their life of hating, so we want to return no value. In Swift, this &quot;no value&quot; has a special name: <code>nil</code>.</p>
+<p>Change the function to this:</p>
+<pre><code class="language-swift">func getHaterStatus(weather: String) -&gt; String? {
+    if weather == "sunny" {
+        return nil
+    } else {
+        return "Hate"
+    }
+}</code></pre>
+<p>That accepts one string parameter (the weather) and returns one string (hating status), but that return value might be there or it might not – it's nil. In this case, it means we might get a string, or we might get nil.</p>
+<p>Now for the important stuff: Swift wants your code to be really safe, and trying to use a nil value is a bad idea. It might crash your code, it might screw up your app logic, or it might make your user interface show the wrong thing. As a result, when you declare a value as being optional, Swift will make sure you handle it safely.</p>
+<p>Let's try this now: add these lines of code to your playground:</p>
+<pre><code class="language-swift">var status: String
+status = getHaterStatus(weather: "rainy")</code></pre>
+<p>The first line creates a string variable, and the second assigns to it the value from <code>getHaterStatus()</code> – and today the weather is rainy, so those haters are hating for sure.</p>
+<p>That code will not run, because we said that <code>status</code> is of type <code>String</code>, which requires a value, but <code>getHaterStatus()</code> might not provide one because it returns an optional string. That is, we said there would <em>definitely</em> be a string in <code>status</code>, but <code>getHaterStatus()</code> might return nothing at all. Swift simply will not let you make this mistake, which is extremely helpful because it effectively stops dead a whole class of common bugs.</p>
+<p>To fix the problem, we need to make the <code>status</code> variable a <code>String?</code>, or just remove the type annotation entirely and let Swift use type inference. The first option looks like this:</p>
+<pre><code class="language-swift">var status: String?
+status = getHaterStatus(weather: "rainy")</code></pre>
+<p>And the second like this:</p>
+<pre><code class="language-swift">var status = getHaterStatus(weather: "rainy")</code></pre>
+<p>Regardless of which you choose, that value might be there or might not, and by default Swift won't let you use it dangerously. As an example, imagine a function like this:</p>
+<pre><code class="language-swift">func takeHaterAction(status: String) {
+    if status == "Hate" {
+        print("Hating")
+    }
+}</code></pre>
+<p>That takes a string and prints a message depending on its contents. This function takes a <code>String</code> value, and <em>not</em> a <code>String?</code> value – you can't pass in an optional here, it wants a real string, which means we can't call it using the <code>status</code> variable.</p>
+<p>Swift has two solutions. Both are used, but one is definitely preferred over the other. The first solution is called optional unwrapping, and it's done inside a conditional statement using special syntax. It does two things at the same time: checks whether an optional has a value, and if so unwraps it into a non-optional type then runs a code block.</p>
+<p>The syntax looks like this:</p>
+<pre><code class="language-swift">if let unwrappedStatus = status {
+    // unwrappedStatus contains a non-optional value!
+} else {
+    // in case you want an else block, here you go…
+}</code></pre>
+<p>These <code>if let</code> statements check and unwrap in one succinct line of code, which makes them very common. Using this method, we can safely unwrap the return value of <code>getHaterStatus()</code> and be sure that we only call <code>takeHaterAction()</code> with a valid, non-optional string. Here's the complete code:</p>
+<pre><code class="language-swift">func getHaterStatus(weather: String) -&gt; String? {
+    if weather == "sunny" {
+        return nil
+    } else {
+        return "Hate"
+    }
+}
+
+func takeHaterAction(status: String) {
+    if status == "Hate" {
+        print("Hating")
+    }
+}
+
+if let haterStatus = getHaterStatus(weather: "rainy") {
+    takeHaterAction(status: haterStatus)
+}</code></pre>
+<p><strong>If you understand this concept, you're welcome to skip down to the title that says &quot;Force unwrapping optionals&quot;.</strong> If you're still not quite sure about optionals, carry on reading.</p>
+<p>OK, if you're still here it means the explanation above either made no sense, or you sort of understood but could probably use some clarification. Optionals are used extensively in Swift, so you really do need to understand them. I'm going to try explaining again, in a different way, and hopefully that will help!</p>
+<p>Here's a new function:</p>
+<pre><code class="language-swift">func yearAlbumReleased(name: String) -&gt; Int {
+    if name == "Taylor Swift" { return 2006 }
+    if name == "Fearless" { return 2008 }
+    if name == "Speak Now" { return 2010 }
+    if name == "Red" { return 2012 }
+    if name == "1989" { return 2014 }
+
+    return 0
+}</code></pre>
+<p>That takes the name of a Taylor Swift album, and returns the year it was released. But if we call it with the album name &quot;Lantern&quot; because we mixed up Taylor Swift with Hudson Mohawke (an easy mistake to make, right?) then it returns 0 because it's not one of Taylor's albums.</p>
+<p>But does 0 make sense here? Sure, if the album was released back in 0 AD when Caesar Augustus was emperor of Rome, 0 might make sense, but here it's just confusing – people need to know ahead of time that 0 means &quot;not recognized.&quot;</p>
+<p>A much better idea is to re-write that function so that it either returns an integer (when a year was found) or nil (when nothing was found), which is easy thanks to optionals. Here's the new function:</p>
+<pre><code class="language-swift">func yearAlbumReleased(name: String) -&gt; Int? {
+    if name == "Taylor Swift" { return 2006 }
+    if name == "Fearless" { return 2008 }
+    if name == "Speak Now" { return 2010 }
+    if name == "Red" { return 2012 }
+    if name == "1989" { return 2014 }
+
+    return nil
+}</code></pre>
+<p>Now that it returns nil, we need to unwrap the result using <code>if let</code> because we need to check whether a value exists or not.</p>
+<p><strong>If you understand the concept now, you're welcome to skip down to the title that says “Force unwrapping optionals”.</strong> If you're still not quite sure about optionals, carry on reading.</p>
+<p>OK, if you're still here it means you're really struggling with optionals, so I'm going to have one last go at explaining them.</p>
+<p>Here's an array of names:</p>
+<pre><code class="language-swift">var items = ["James", "John", "Sally"]</code></pre>
+<p>If we wanted to write a function that looked in that array and told us the index of a particular name, we might write something like this:</p>
+<pre><code class="language-swift">func position(of string: String, in array: [String]) -&gt; Int {
+    for i in 0 ..&lt; array.count {
+        if array[i] == string {
+            return i
+        }
+    }
+
+    return 0
+}</code></pre>
+<p>That loops through all the items in the array, returning its position if it finds a match, otherwise returning 0.</p>
+<p>Now try running these three lines of code:</p>
+<pre><code class="language-swift">let jamesPosition = position(of: "James", in: items)
+let johnPosition = position(of: "John", in: items)
+let sallyPosition = position(of: "Sally", in: items)
+let bobPosition = position(of: "Bob", in: items)</code></pre>
+<p>That will output 0, 1, 2, 0 – the positions of James and Bob are the same, even though one exists and one doesn't. This is because I used 0 to mean &quot;not found.&quot; The easy fix might be to make -1 not found, but whether it's 0 or -1 you still have a problem because you have to remember that specific number means &quot;not found.&quot;</p>
+<p>The solution is optionals: return an integer if you found the match, or nil otherwise. In fact, this is exactly the approach the built-in &quot;find in array&quot; methods use: <code>someArray.index(of: someValue)</code>.</p>
+<p>When you work with these &quot;might be there, might not be&quot; values, Swift forces you to unwrap them before using them, thus acknowledging that there might not be a value. That's what <code>if let</code> syntax does: if the optional has a value then unwrap it and use it, otherwise don't use it at all. You can’t use a possibly-empty value by accident, because Swift won’t let you.</p>
+<p>If you're <em>still</em> not sure how optionals work, then the best thing to do is ask me on Twitter and I'll try to help: you can find me <a href="http://twitter.com/twostraws">@twostraws</a>.</p>
+<font color="#00008b" size="5">Force unwrapping optionals</font>
+<p>Swift lets you override its safety by using the exclamation mark character: <code>!</code>. If you know that an optional definitely has a value, you can force unwrap it by placing this exclamation mark after it. </p>
+<p><strong>Please be careful, though: if you try this on a variable that does not have a value, your code will crash.</strong></p>
+<p>To put together a working example, here's some foundation code:</p>
+<pre><code class="language-swift">func yearAlbumReleased(name: String) -&gt; Int? {
+    if name == "Taylor Swift" { return 2006 }
+    if name == "Fearless" { return 2008 }
+    if name == "Speak Now" { return 2010 }
+    if name == "Red" { return 2012 }
+    if name == "1989" { return 2014 }
+
+    return nil
+}
+
+var year = yearAlbumReleased(name: "Red")
+
+if year == nil {
+    print("There was an error")
+} else {
+    print("It was released in \(year)")
+}</code></pre>
+<p>That gets the year an album was released. If the album couldn't be found, <code>year</code> will be set to nil, and an error message will be printed. Otherwise, the year will be printed.</p>
+<p>Or will it? Well, <code>yearAlbumReleased()</code> returns an optional integer, and this code doesn't use <code>if let</code> to unwrap that optional. As a result, it will print out the following: &quot;It was released in Optional(2012)&quot; – probably not what we wanted!</p>
+<p>At this point in the code, we have already checked that we have a valid value, so it's a bit pointless to have another <code>if let</code> in there to safely unwrap the optional. So, Swift provides a solution – change the second <code>print()</code> call to this:</p>
+<pre><code class="language-swift">print("It was released in \(year!)")</code></pre>
+<p>Note the exclamation mark: it means &quot;I'm certain this contains a value, so force unwrap it now.&quot;</p>
+<font size="5" color="#00008b">Implicitly unwrapped optionals</font>
+<p>You can also use this exclamation mark syntax to create implicitly unwrapped optionals, which is where some people really start to get confused. So, please read this carefully!</p>
+<ul>
+<li>A regular variable must contain a value. Example: <code>String</code> must contain a string, even if that string is empty, i.e. <code>""</code>. It <em>cannot</em> be nil.</li>
+<li>An <em>optional</em> variable might contain a value, or might not. It must be unwrapped before it is used. Example: <code>String?</code> might contain a string, or it might contain nil. The only way to find out is to unwrap it.</li>
+<li>An implicitly unwrapped optional might contain a value, or might not. But it does <em>not</em> need to be unwrapped before it is used. Swift won't check for you, so you need to be extra careful. Example: <code>String!</code> might contain a string, or it might contain nil – and it's down to you to use it appropriately. It’s like a regular optional, but Swift lets you access the value directly without the unwrapping safety. If you try to do it, it means you know there’s a value there – but if you’re wrong your app will crash.</li>
+</ul>
+<p>The main times you're going to meet implicitly unwrapped optionals is when you're working with user interface elements in UIKit on iOS or AppKit on macOS. These need to be declared up front, but you can't use them until they have been created – and Apple likes to create user interface elements at the last possible moment to avoid any unnecessary work. Having to continually unwrap values you definitely know will be there is annoying, so these are made implicitly unwrapped.</p>
+<p>Don't worry if you find implicitly unwrapped optionals a bit hard to grasp - it will become clear as you work with the language.</p>
+
+
+
+</div>
+</font>
+    <marquee>  <font color="purple" ><h1>END OPTIONALS</h1></font></marquee><br>
+
+</body>
+</html>

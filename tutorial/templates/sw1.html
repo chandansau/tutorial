@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <center><h1><font color="maroon"><u>INSTALL XCODE & CREATE A PLAYGROUND</u></font></h1></center>
+
+    <title>EW Technologies online learning</title>
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<font size="4">
+    <marquee > <font color="#00008b">How to install Xcode and create a playground</font></marquee>
+ <p>Xcode is Apple's programming application for developers. It's free from the Mac App Store, and it's required to do development for Apple’s platforms. So, your first action is to <a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12&amp;at=10l8cn&amp;ct=hws" target="_blank">click here to install Xcode from the Mac App Store</a> – it's quite a big download, so start downloading it now and carry on reading.</p>
+<p>While that's downloading, I can explain a couple of the absolute basics to you:</p>
+<ul>
+    <li><strong><font color="#00008b" size="4">iOS</font></strong> is the name of the operating system that runs on all iPhones and iPads. It's responsible for all the basic operations of the phone, such as making phone calls, drawing on the screen, and running apps.</li>
+    <li><strong><font color="#00008b" size="4">macOS</font></strong> is the name for Apple’s desktop operating system, which is the technological grandparent of iOS, tvOS, and even watchOS.</li>
+    <li><strong><font color="#00008b" size="4">watchOS</font></strong> is the name for Apple’s tiniest operating system, and is responsible for running native apps and also delivering notifications from the phone.</li>
+    <li><strong><font color="#00008b" size="4">Swift</font></strong> is Apple's modern programming language that lets you write apps for iOS, macOS, and other platforms. It contains the functionality for building programs, but doesn't handle anything like user interfaces, audio or networking.</li>
+    <li><strong><font color="#00008b" size="4">Swift 1.2</font></strong> was the first major update to Swift, tweaking various language features and improving others.</li>
+    <li><strong><font color="#00008b" size="4">Swift 2</font></strong> was the second major update to Swift, introducing checked exceptions, and many other major improvements.</li>
+    <li><strong><font color="#00008b" size="4">Swift 2.2</font></strong> was a minor update to Swift 2.0, deprecating some syntax ahead of its removal in Swift 3.</li>
+    <li><strong><font color="#00008b" size="4">Swift 3</font></strong> is the third major update to Swift, and brought a huge number of naming changes to make the language easier and more natural to write.</li>
+    <li><strong><font color="#00008b" size="4">Swift 4</font></strong> is the fourth major update to Swift, and focused mainly on new features that helped make the language more expressive.</li>
+    <li><strong><font color="#00008b" size="4">UIKit</font></strong> is Apple's user interface toolkit. It contains things like buttons, text boxes, navigation controls and more, and you drive it using Swift.</li>
+    <li><strong><font color="#00008b" size="4">AppKit</font></strong> is Apple’s user interface toolkit for macOS. Like UIKit it contains things like buttons, text boxes, and more, although focused on macOS rather than iOS.</li>
+    <li><strong><font color="#00008b" size="4">WatchKit</font></strong> is Apple’s user interface toolkit for watchOS. While UIKit and AppKit have much in common, WatchKit is significantly different – and significantly simpler.</li>
+    <li><strong><font color="#00008b" size="4">Cocoa Touch</font></strong> is the name commonly used for Apple's vast collection of frameworks for iOS. It includes UIKit to do user interfaces, but most people would say it also includes SpriteKit for making 2D games, SceneKit for making 3D games, MapKit for maps, Core Graphics for drawing, Core Animation for animating things, and much more.</li>
+    <li><strong><font color="#00008b" size="4">Cocoa</font></strong> is the name used for Apple’s framework collection on macOS. Strictly speaking it’s made up of AppKit for user interface, Foundation for basic functionality, and Core Data for object graphs, but like Cocoa Touch it’s often used to mean “all of macOS development.”</li>
+    <li><strong><font color="#00008b" size="4">NeXTSTEP</font></strong> is an operating system created by a company that Steve Jobs founded called NeXT. It was bought by Apple, at which point Jobs was placed back in control of the company, and put NeXTSTEP technology right into the core of Apple's development platform.</li>
+    <li><strong><font color="#00008b" size="4">iOS Simulator</font></strong> is a tool that comes with Xcode that looks and works almost exactly like a real iPhone or iPad. It lets you test iOS apps very quickly without having to use a real device.</li>
+    <li><strong><font color="#00008b" size="4">Playgrounds</font></strong> are miniature Swift testing environments that let you type code and see the results immediately. You don't build real apps with them, but they are great for learning. We'll be using playgrounds in this introduction.</li>
+    <li><strong><font color="#00008b" size="4">Crashes</font></strong> are when your code goes disastrously wrong and your app cannot recover. If a user is running your app it will just disappear and they'll be back on the home screen. If you're running in Xcode, you'll see a crash report.</li>
+    <li><strong><font color="#00008b" size="4">Taylor Swift</font></strong> has nothing to do with the Swift programming language. This is a shame, as you might imagine, but I'll try to make up for this shortfall by using her songs in this tutorial. Deal with it.</li>
+</ul>
+<p>That's it for the basics – if Xcode still hasn't finished downloading then why not watch some Taylor Swift videos while you wait? The examples in this tutorial will certainly make a lot more sense…</p>
+<p><strong>Got Xcode installed? OK! Let's do this…</strong></p>
+    <br><marquee ><font color="#00008b" size="6">Introduction to Swift playgrounds</font></marquee>
+<p>When you launch Xcode, you'll see something like the picture below. Look for the &quot;Get started with a playground&quot; button on the lower left, and click that. </p>
+<p>Xcode will ask you whether you want to create a playground for iOS or macOS, but it doesn’t matter here – this introduction is almost exclusively about the Swift language, with no user interface components. For the avoidance of problems, leave “iOS” selected for the platform. You’ll see a list of playground templates you can choose from, but we’re going to start small here so please choose Blank.</p>
+<p>Finally, Xcode will ask you to name your playground – the default name of &quot;MyPlayground&quot; is fine, so go ahead and click Create.</p>
+<p>What you'll see is a window split in two. On the left you'll see this:</p>
+<pre><code class="language-swift">//: Playground - noun: a place where people can play
+
+import UIKit
+var str = "Hello, playground"</code></pre>
+<p>And on the right, once Xcode has built and run the code, you'll see this: &quot;Hello, playground&quot;. Note that build and running the code takes 10 seconds or so the first time, but is fast otherwise – Xcode has to launch a mini simulator behind the scenes.</p>
+<p>This split is important, because it divides code and results. The code is in the left pane, and you will edit this to do your own Swift work as we go. The results are in the right pane, and it shows you what your Swift code has done. In this case, it's telling us that we successfully set the value &quot;Hello, playground.&quot;</p>
+<p>You will also notice that the very first line of the playground starts with two slashes, <code>//</code>. When Swift sees two slashes like that, it ignores everything after them on a line. This is commonly used for comments: notes that you write into your code to help you understand what it does later.</p>
+<p>As you type, the playground will automatically run your code and show the updated results. For example, if you just write <code>str</code> by itself, you'll see &quot;Hello, Playground&quot; twice on the right – once because it's being set, and once because you're printing the value.</p>
+<p>Playgrounds are a great way to try some code and see the results immediately. They are extremely powerful too, as you'll see over the next hour or so. Let's get started writing Swift!</p>
+</font>
+<marquee >  <font color="purple" ><h1>END INTRODUCTION</h1></font></marquee><br>
+
+</body>
+</html>

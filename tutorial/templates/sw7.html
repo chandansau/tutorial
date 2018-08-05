@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EW Technologies online learning</title>
+    <center><h1><font color="maroon"><u>DICTIONARIES</u></font></h1></center>
+
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<font size="4">
+
+                    <p>As you've seen, Swift arrays are a collection where you access each item using a numerical index, such as <code>songs[0]</code>. Dictionaries are another common type of collection, but they differ from arrays because they let you access values based on a key you specify.</p>
+<p>To give you an example, let's imagine how we might store data about a person in an array:</p>
+<pre><code class="language-swift">var person = ["Taylor", "Alison", "Swift", "December", "taylorswift.com"]</code></pre>
+<p>To read out that person's middle name, we'd use <code>person[1]</code>, and to read out the month they were born we'd use <code>person[3]</code>. This has a few problems, not least that it's difficult to remember what index number is assigned to each value in the array! And what happens if the person has no middle name? Chances are all the other values would move down one place, causing chaos in your code.</p>
+<p>With dictionaries we can re-write this to be far more sensible, because rather than arbitrary numbers you get to read and write values using a key you specify. For example:</p>
+<pre><code class="language-swift">var person = ["first": "Taylor", "middle": "Alison", "last": "Swift", "month": "December", "website": "taylorswift.com"]
+person["middle"]
+person["month"]</code></pre>
+<p>It might help if I use lots of whitespace to break up the dictionary on your screen, like this:</p>
+<pre><code class="language-swift">var person = [
+                "first": "Taylor",
+                "middle": "Alison",
+                "last": "Swift",
+                "month": "December",
+                "website": "taylorswift.com"
+            ]
+
+person["middle"]
+person["month"]</code></pre>
+<p>As you can see, when you make a dictionary you write its key, then a colon, then its value. You can then read any value from the dictionary just by knowing its key, which is much easier to work with.</p>
+<p>As with arrays, you can store a wide variety of values inside dictionaries, although the keys are most commonly strings.</p>
+</font>
+<marquee >  <font color="purple" ><h1>END DICTIONARIES</h1></font></marquee><br>
+
+</body>
+</html>

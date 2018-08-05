@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <center><h1><font color="maroon"><u>ARRAY IN PYTHON</u></font></h1></center>
+    <meta charset="UTF-8">
+    <title>EW Technologies online learning</title>
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<p><font size="4">
+<pre>
+<font color="#00008b">Array</font> represents a group of elements of same data type
+1. only one type of element .
+2. The size of array is not fixed in Python.
+3. array size can increase or decrease dynamically .
+4. In array we use numpy package.
+5. array is useful to handle a collection of elements like a group of numbers or charecters.
+
+    <font color="#00008b">Three way to import numpy:</font>
+    >>>import numpy
+    >>> numpy.array(lst)
+      (or)
+    >>>import numpy as np
+    >>>np.array(lst)
+      (or)
+    >>>from numpy import *
+    >>>array(lst)
+
+    Example 1:
+    import numpy
+    a1=numpy.array([2.1,3.4,-5,6,'a'])
+    print(type(a1))
+    print(a1)
+
+    Example 2:
+    from numpy import *
+    a=array(['a','b','c',10,13.2,-12])
+    print(type(a))
+    print(a)
+
+    Example.
+    <font style="background-color: yellowgreen">#crating an array </font>
+    import array as a
+    ar=a.array('i',[2,5,8,6,3,4,9])
+    print(ar)
+    o/p:
+    array('i', [2, 5, 8, 6, 3, 4, 9])
+
+    Example
+     <font style="background-color: yellowgreen">#crating an array </font>
+    import array as a
+    ar=a.array('i',[2,5,8,-6,3,4,9])
+    for i in ar:
+        print(i)
+    o/p:
+    2
+    5
+    8
+    -6
+    3
+    4
+    9
+</pre>
+    <marquee  onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="5">Indixing and Slicing on Array:</font></marquee>
+
+<pre>
+Slicing:
+    arrayname[start:stop:jump]
+
+    <font style="background-color: yellowgreen">#effect of slicing operations </font>
+    import array as a
+    ar=a.array('i',[2,5,8,-6,3,4,9])
+    n=len(ar)
+    print(n)
+    print(ar[1:3])
+    print(ar[-1:2:-1])
+    print(ar[-1::-1])
+    print(ar[-1::-2])
+    print(ar[0:-1:1])
+    print(ar[2])
+    print(ar[-1])
+
+    o/p:
+    7
+    array('i', [5, 8])
+    array('i', [9, 4, 3, -6])
+    array('i', [9, 4, 3, -6, 8, 5, 2])
+    array('i', [9, 3, 8, 2])
+    array('i', [2, 5, 8, -6, 3, 4])
+    8
+    9
+</pre>
+<marquee  direction=right onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="5"> Array Methods:</font></marquee>
+<pre>
+    ar=array.array('i',[2,5,8,-6,3,4,9])
+
+    ar.append(x) :   This function is used to add the value mentioned in its arguments at the end of the array.
+    ar.count(x):     Returns the number of occurrances of x in the array a.
+    ar.insert(i,x) : This function is used to add the value at the position specified in its argument.
+    ar.index(x):     Return the position number of first occurrence of x'
+    ar.pop(x):       Remove the the item of x from array and return it.
+    ar.pop():        Remove last item from array.
+    ar.remove(x) :   Return first occrunce of x in the array.
+    ar.reverse():    Reverse the order of the array.
+
+    Example
+    <font style="background-color: yellowgreen">#effect of Methodes</font>
+    import array as a
+    ar=a.array('i',[2,5,8,-6,3,4,9])
+
+    ar.append(16)
+    print(ar)
+    ar.insert(3,8)
+    print(ar)
+    print(ar.count(8))
+    print(ar.index(-6))
+    print(ar.pop(3))
+    print(ar)
+    print(ar.pop())
+    print(ar)
+    ar.remove(-6)
+    print(ar)
+    ar.reverse()
+    print(ar)
+    o/p:
+    array('i', [2, 5, 8, -6, 3, 4, 9, 16])
+    array('i', [2, 5, 8, 8, -6, 3, 4, 9, 16])
+    2
+    4
+    8
+    array('i', [2, 5, 8, -6, 3, 4, 9, 16])
+    16
+    array('i', [2, 5, 8, -6, 3, 4, 9])
+    array('i', [2, 5, 8, 3, 4, 9])
+    array('i', [9, 4, 3, 8, 5, 2])
+
+</pre>
+<marquee  direction=left onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="5"> Types of Array:</font></marquee>
+Two Types of Array:<br>
+<pre>
+    1. Single dimensional array
+    2. Multi dimensional array
+<font style="color: darkblue" size="4"><u>Single dimensional array</u></font>
+    Array represent only one row or one column of elements.
+Example
+mark= array('i', [56,98,78,69,79])
+
+<font style="color: darkblue" size="4"><u>Multi dimensional array</u></font>
+    This Array represent more then one row or more then one column of elements.
+Example
+mark= array('i', [[56,98,78,69,79],
+                   [25,89,63,45,45],
+                   [89,65,98,74,78]])
+
+</pre>
+<marquee  direction=right onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="5"> Working with Array using numpy:</font></marquee>
+<pre>
+Creating array in numpy can be done in several ways, Som of the important ways are:
+    => Using Array() function
+    => Using linspace() function
+    => Using logspace() function
+    => Using arrange() function
+    => Using zero() and one() function
+
+</pre>
+<font style="color: darkblue" size="4">Creating array using array()</font>
+<pre>
+    #crating an array
+    import numpy as np
+    ar=np.array([2, 5, 8, -6, 3, 4, 9, 16])
+    print(ar)
+    o/p:
+    [ 2  5  8 -6  3  4  9 16]
+
+</pre>
+<font style="color: darkblue" size="4">Creating array using linspace()</font>
+<pre>
+    syntax:
+    linspace(start:stop:n)
+    n= divided start to stop into n part and take those point in the array.
+    Example
+<font style="background-color: yellowgreen">#creating a array using linspace(start,end,part)</font>
+
+    from numpy import *
+    ar=linspace(0,10,5)
+    print(ar)
+    o/p:
+    [  0.    2.5   5.    7.5  10. ]
+
+</pre>
+<font style="color: darkblue" size="4">Creating  array using logspace()</font>
+<pre>
+    syntax:
+    logspace(start:stop:n)
+    This function start at a value which is start to the power of 10 and ends at a value which is stop to the power of 10.
+    Example
+<font style="background-color: yellowgreen">#creating a array using logspace(start,end,part)</font>
+
+    from numpy import *
+    ar=logspace(1,4,5)
+    print(ar)
+    o/p:
+    [    10.             56.23413252    316.22776602   1778.27941004  10000.        ]
+</pre>
+ <font style="color: darkblue" size="4">Creating array using arange()</font><br>
+    arange() in numpy same as range() function.
+<pre>
+    syntax:
+    arange(start:stop:jump)
+
+    #creating a array using arange(start,end,part)
+    from numpy import *
+    ar=np.arange(1,20,2)
+    print(ar)
+    o/p:
+    [ 1  3  5  7  9 11 13 15 17 19]
+</pre>
+ <font style="color: darkblue" size="4">Creating array using zeros() and ones()</font><br>
+<pre>
+    Example
+    import numpy as np
+    ar=np.ones(5,int)
+    ar1=np.ones(5,float)
+    print("ones(int):",ar)
+    print("ones(float):",ar1)
+    ar2=np.zeros(5)
+    print("zeros:",ar2)
+    o/p:
+    ones(int): [1 1 1 1 1]
+    ones(float): [ 1.  1.  1.  1.  1.]
+    zeros: [ 0.  0.  0.  0.  0.]
+
+</pre>
+
+<marquee  direction=left onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="5">Viewing & Copying Array:</font></marquee><br>
+    Viewing is nothing but copying.It is called shallow copying as the elements in the view whene modyfied will also modify the elements in the original array.<br>
+    deepcopy: if any modify in original array then no changes on copying array.
+<pre>
+    <font color="#00008b" size="4"> Arithmetic operation on Array </font>
+    Example 1
+    import numpy
+    a1=numpy.array([2,3,-5,6])
+    print(type(a1))
+    for i in a1:
+        print(a1)
+    o/p:
+    <class 'numpy.ndarray'>
+    [ 2  3 -5  6]
+    [ 2  3 -5  6]
+    [ 2  3 -5  6]
+    [ 2  3 -5  6]
+    Example 2
+    from numpy import *
+    a=array(['a','b','c',10,13.2,-12])
+    print(type(a))
+    print(a)
+    o/p:
+    <class 'numpy.ndarray'>
+    ['a' 'b' 'c' '10' '13.2' '-12']
+
+    Example 3
+    <font style="background-color: yellowgreen">#add and div of the matrix</font>
+    import numpy
+    ar=numpy.array([20,30,40,-5,3])
+    print("\t\t",ar)
+    ar=ar+5
+    print("After add 5:\t",ar)
+    ar=ar//10
+    print("after div:\t",ar)
+    [20 30 40 -5  3]
+    o/p:
+    After add 5:	 [25 35 45  0  8]
+    after div:	 [2 3 4 0 0]
+
+    Example 4
+    <font style="background-color: yellowgreen"> #addition of the matrix</font>
+    import numpy
+    ar=numpy.array([20,30,40,-5,3])
+    ar1=numpy.array([12,3,10,-15,31])
+    ar2=ar+ar1
+    print("add 2 array:\t",ar2)
+    ar3=numpy.array([-2,13,11,-15,8])#in ar2 no. of element is 4 & ar3 no. of element is 5 so error comming , in array number of element must be smae
+    ar5=ar2+ar3
+    print("add:\t",ar5)
+    o/p:
+    add 2 array:	 [ 32  33  50 -20  34]
+    add:	 [ 30  46  61 -35  42]
+     <font style="background-color: yellowgreen"> #operation on matrix</font>
+
+    ar=numpy.array([[20,30,40,-5,3],[2,3,6,-3,5]])
+    print("1",len(ar))#
+    print("2",ar.size)#size provide number of element in array
+    print("3",ar[2:5])
+    print("4",ar[-1::-1])
+    print("5",ar.ndim)  #ndim gives you to dimansanal of aaray
+    print("6",ar)
+    print("7",ar.shape) #shape gives u to number of rows and colomn  (2,5)=2 rows and 5 colomns
+    ar.shape=(5,2)#inverse of the array, means row became colome and colomn became rows
+    print("8",ar)
+    print(ar)
+
+    o/p:
+    1 2
+    2 10
+    3 []
+    4 [[ 2  3  6 -3  5]
+     [20 30 40 -5  3]]
+    5 2
+    6 [[20 30 40 -5  3]
+     [ 2  3  6 -3  5]]
+    7 (2, 5)
+    8 [[20 30]
+     [40 -5]
+     [ 3  2]
+     [ 3  6]
+     [-3  5]]
+    [[20 30]
+     [40 -5]
+     [ 3  2]
+     [ 3  6]
+     [-3  5]]
+
+    Example
+    <font style="background-color: yellowgreen"> #operation on matrix</font>
+
+    ar=numpy.array([[20,30,40,-5,3,6],[2,3,6,-3,5,9]])
+    print("1 o/p:",ar)
+    print("2 o/p:",ar.reshape(4,3))
+    print("3 o/p:",ar.flatten()) # gives single D Array
+    print("4 o/p:",ar.diagonal())
+    ar=eye(3,dtype=int)# diagonal element fill by 1's
+    print("5 o/p:",ar)
+
+    o/p:
+    1 o/p: [[20 30 40 -5  3  6]
+     [ 2  3  6 -3  5  9]]
+    2 o/p: [[20 30 40]
+     [-5  3  6]
+     [ 2  3  6]
+     [-3  5  9]]
+    3 o/p: [20 30 40 -5  3  6  2  3  6 -3  5  9]
+    4 o/p: [20  3]
+    5 o/p: [[1 0 0]
+     [0 1 0]
+     [0 0 1]]
+    Eg.
+    <font style="background-color: yellowgreen"> #operation on matrix</font>
+   from numpy import *
+    ar=array([[1,3,6,5,6],[5,6,2,3,8],[2,3,8,8,9],[4,8,6,2,6]])
+    #print(ar)
+    m=matrix(ar)
+    #print(m)
+    print("1 o/p:",m+6)
+    print("2 o/p:",m*6)
+    print("3 o/p:",m.transpose())#tanspose matrix
+    m1=matrix(array([[2,3,8,9,1],[3,3,9,3,1],[2,5,9,8,7],[2,6,9,7,5]]))
+    m2=m+m1
+    print("4 o/p:",m2)
+    m3=sort(m2) # sorting the each element of the  matrix
+    print("5 o/p:",m3)
+
+    o/p:
+    1 o/p: [[ 7  9 12 11 12]
+     [11 12  8  9 14]
+     [ 8  9 14 14 15]
+     [10 14 12  8 12]]
+    2 o/p: [[ 6 18 36 30 36]
+     [30 36 12 18 48]
+     [12 18 48 48 54]
+     [24 48 36 12 36]]
+    3 o/p: [[1 5 2 4]
+     [3 6 3 8]
+     [6 2 8 6]
+     [5 3 8 2]
+     [6 8 9 6]]
+    4 o/p: [[ 3  6 14 14  7]
+     [ 8  9 11  6  9]
+     [ 4  8 17 16 16]
+     [ 6 14 15  9 11]]
+    5 o/p: [[ 3  6  7 14 14]
+     [ 6  8  9  9 11]
+     [ 4  8 16 16 17]
+     [ 6  9 11 14 15]]
+
+</pre>
+<marquee  direction=right onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="5">List Comprehension:</font></marquee><br>
+<pre>
+    Creating a new list from a inerrable object
+    Syntax:
+    [expression for item in list if conditional]
+    Example
+    #create a list comprehension with squre of 1 to 10
+    _________________________________________________________
+    1.
+    lst=[]
+    for i in range(1,11):
+        lst.append(i**2)
+    print(lst)
+    ----------------------------------------------------
+    2.
+    lst=[pow(i,2) for i in range(1,11)]
+    print(lst)
+    ________________________________________________________
+    same o/p for 1 and 2
+    o/p:
+    [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+    ________________________________________________________
+    <font style="background-color: yellowgreen"># Even Numbers</font>
+    lst=[i for i in range(1,11) if(i%2==0)]
+    print(lst)
+    o/p:
+    [2, 4, 6, 8, 10]
+    Eg.
+    w=['ghd','nc','djsa','bda','bdha']
+    lst=[]
+    for i in w:
+        print(i[0],end=" ")
+                              #    or we write bellow way by using list comprehension
+    z=[i[0] for i in w]
+    print("\n",z)
+    o/p:
+    g n d b b
+    ['g', 'n', 'd', 'b', 'b']
+
+</pre>
+
+
+
+</font>
+</p>
+<marquee >  <font color="purple" ><h1>END ARRAY IN PYTHON</h1></font></marquee><br>
+
+</body>
+</html>

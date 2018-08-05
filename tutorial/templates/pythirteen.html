@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <center><h1><font color="maroon"><u>FILES IN PYTHON</u></font></h1></center>
+
+    <meta charset="UTF-8">
+    <title>EW Technologies online learning</title>
+
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<p>
+
+<font size="4">
+It organised collection of data.<br>
+    1.	File help to store data on 2ndary storage<br>
+    2.	A file data can be use by many program’s parallelly<br>
+<marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="6"> Types of Files</font></marquee><br>
+<font color="#00008b" size="5">Two types of files:</font><br>
+    1.	Text  File: store char’s and string<br>
+    2.	Binary files: store chars and image, audio, video files<br>
+<pre>
+<font color="#00008b" size="5">Text File:</font>
+Syntax to create file:
+F=open("filename.txt", "mode", buffer size)
+Write() : to store char. In file We use write()
+F=open("filename.txt", mode="w", buffer size)
+(or)
+F=open("filename.txt", "w", buffer size)
+
+<font color="#00008b" size="5">Different methods of the file object:</font>
+
+<font color="#dc143c" size="5">Open():</font>The open() function is used to open files in our system, the filename is the name of the file to be opened.
+Example
+    file="Hello.txt"
+    F=open(file, "r")
+    for i in F:
+        print(i,end=" ")
+<font color="#dc143c" size="5">Write ():</font>
+
+This method writes a sequence of strings to the file.
+
+write ()	#Used to write a fixed sequence of characters to a file
+
+writelines()	#writelines can write a list of strings.
+    Example
+    <font style="background-color: yellowgreen">#create a file and store characters  </font>
+
+    f=open("MyText.txt" ,"w" )
+    str=input("Enter charecter")
+    f.write(str)
+    f.close()
+    print("sucessfully saved ")
+
+    o/p:
+    Enter charecterhii friend.How are you..?
+    sucessfully saved
+    Now open the<font color="#dc143c"><u> MyText.txt </u></font>file
+    see the bellow picture:
+<img src="/media/Capture2.JPG" height="350" width="800">
+
+
+<font color="#dc143c" size="5">read():</font>
+The read functions contains different methods, read(),readline() and readlines()
+read()		# It read data dependent on the size of characters
+
+readline	#return one line at a time
+
+readlines	#It can read entered the filevat a time with next line character.
+    syntax:
+    F=open("filename.txt", mode="r", buffer size)
+
+    Example
+    <font style="background-color: yellowgreen">#read the data from the file  </font>
+    f=open("MyText.txt" ,"r" )
+    str=f.read()
+    print(str)
+    f.close()
+    print("sucessfully read ")
+    o/p:
+    hii friend.How are you..?
+    sucessfully read
+
+<font color="#dc143c" size="5">Append ():</font>
+The append function is used to append to the file instead of overwriting it.
+    syntax:
+    F=open("filename.txt", mode="a", buffer size)
+    Example
+    <font style="background-color: yellowgreen"> # call the file and add the characters </font>
+    f=open("MyText.txt" ,"a" )
+    str=input("Enter charecter:")
+    f.write(str)
+    f.close()
+    print("sucessfully saved ")
+    o/p:
+    Enter charecter:where are you now..?
+    sucessfully saved
+    Now open the <font color="#dc143c"><u>MyText.txt</u></font> file
+    see the bellow picture:
+<img src="/media/Capture1.JPG" height="350" width="800">
+
+<font color="#00008b" size="5">Os.path.isfile(fname) True/False</font>
+    Import os.path
+    Import sys
+    Sys.exit()  terminate program
+<font style="background-color: yellowgreen">#To check if file is exit or not</font>
+    import os.path,sys
+    fname=input("Enter the file name")
+    if(os.path.isfile(fname)):
+        #open the file
+        f=open(fname,"r")
+    else:
+        print("File not found")
+        sys.exit()
+    str=f.read()
+    print(str)
+    f.close()
+
+
+<img src="/media/zoomit4.JPG" height="500" width="1000">
+
+<font color="#00008b" size="6">Binary Files:</font>
+Binary files handle the data in the form of bytes.For most software that people use in their daily lives, the software consumes and produces binary
+files. Examples of such software include Microsoft Office, Adobe Photoshop, and various audio/video/media players. A typical computer user works with
+mostly binary files and very few text files.
+    Example
+<font style="background-color: yellowgreen"> #w a p to pickle emp class object (from this program we can perform # pickle and unpickle the emp )</font>
+_______________________________________________________________________________________________________________________________________________________
+    class Emp:
+        def __init__(self,id,name,sal):
+            self.id=id
+            self.name=name
+            self.sal=sal
+        def display(self):
+            print("Id:\t",self.id,"Name:\t",self.name,"Sal:\t",self.sal)
+                # save this prog. as emp.py
+    <font style="background-color: aqua"> # 1st do Pickle program save as <u>pikl.py</u> program then do Unpickle program save as <u>unpikl.py</u> program</font>
+_______________________________________________________________________________________________________________________________________________________
+
+<font style="background-color: yellowgreen">#pickle the emp class object</font>
+    import emp
+    import pickle
+    f=open("empdata.bin","wb")
+    n=int(input("How many Employee"))
+    for i in range(n):
+        id=int(input("Enter the ID of Emp"))
+        name=input("Enter the Nmae of Emp")
+        sal=float(input("Enter the Salary of Emp"))
+        #create emp object
+        obj=emp.Emp(id,name,sal)
+        pickle.dump(obj,f)
+    # save this prog. as pikl.py and run
+        runfile('C:/Users/Chandan/pickle_concept/pikl.py', wdir='C:/Users/Chandan/pickle_concept')
+    Reloaded modules: emp
+
+    How many Employee2
+
+    Enter the ID of Emp1001
+
+    Enter the Nmae of EmpLee
+
+    Enter the Salary of Emp83000.32
+
+    Enter the ID of Emp1002
+
+    Enter the Nmae of EmpJack
+
+    Enter the Salary of Emp68000.36
+    To display all employee we use Unpickle concept
+_______________________________________________________________________________________________________________________________________________________
+
+<font style="background-color: yellowgreen" >#unpickel obj data from the file</font>
+    import emp,pickle
+    f=open("empdata.bin","rb")
+    #read all data from file
+    while True:
+        try:
+            obj=pickle.load(f)
+            obj.display()
+        except EOFError :
+            print("End of file reach")
+            break
+    f.close()
+
+    save this unpikl.py and run
+    o/p:
+    runfile('C:/Users/Chandan/pickle_concept/unpikl.py', wdir='C:/Users/Chandan/pickle_concept')
+    <u>Reloaded modules</u>: emp
+    Id:      1001 Name:      Lee Sal:        83000.32
+    Id:      1002 Name:      Jack Sal:       68000.36
+    End of file reach
+
+</pre>
+<marquee><h1><span style="color: purple">END FILES </span></h1></marquee>
+
+</font>
+</p>
+</body>
+</html>

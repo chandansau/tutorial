@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <center><h1><font color="maroon"><u>TURTLE GRAPHICS</u></font></h1></center>
+
+    <meta charset="UTF-8">
+    <title>EW Technologies online learning</title>
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<br><marquee ><font color="#00008b" size="5">Introduction</font></marquee>
+
+<p>
+
+<font size="4">
+Turtle graphics is a popular way for introducing programming to kids. Virtual turtles can be programmed to move around the
+screen. The turtle draws lines as it moves. The "turtle" could look like the turtle animal, an arrow, or be invisibile. The user can
+write turtle programs that draw beautiful shapes and learn to program at the same time.
+<pre>
+There are always four steps you need to do in order to use the turtle module:
+    1. Import the turtle module. If we skip this step, there’ll be no turtle to control.
+    2. Create a turtle to control.
+    3. Draw things. Do stuff. This will also automatically create the screen.
+    4. Run turtle.done() .
+
+<font color="#00008b" size="5">Code:</font>
+    from turtle import *
+    forward(100)
+    left(90)
+    forward(100)
+    left(90)
+    forward(100)
+    left(90)
+    forward(100)
+
+    o/p:
+    <img src="/media/b19.JPG" width="300" height="300">
+The instructions in your program tell the "turtle" how to move. The turtle draws a line behind it as it moves. This program
+draws a square. The steps given to the program are:
+1. Move forward 100 steps. (In the beginning, the turtle is facing to the right.)
+2. Turn 90 degrees to the left.
+3. Move forward 100 steps.
+4. Turn 90 degrees to the left.
+5. Move forward 100 steps.
+6. Turn 90 degrees to the left.
+7. Move forward 100 steps. The turtle has ended up where it started.
+
+    <font style="background-color: yellowgreen"> Examples:</font>
+    from turtle import *
+    for i in range(500): # this "for" loop will repeat these functions 500 times
+        forward(i)
+        left(91)
+
+    <img src="/media/b20.JPG" width="500" height="500">
+
+    <font style="background-color: yellowgreen"> Examples:</font>
+
+    from turtle import *
+    color('red', 'yellow')
+    begin_fill()
+    while True:
+        forward(200)
+        left(170)
+        if abs(pos()) < 1:
+            break
+    end_fill()
+    done()
+    o/p:
+     <img src="/media/b21.JPG" width="400" height="400">
+
+    <font style="background-color: yellowgreen"> Examples:</font>
+    import turtle
+    painter = turtle.Turtle()
+    painter.pencolor("blue")
+    for i in range(50):
+        painter.forward(50)
+        painter.left(123) # Let's go counterclockwise this time
+        painter.pencolor("red")
+    turtle.done()
+    o/p:
+    <img src="/media/b22.JPG" width="300" height="300">
+
+    <font style="background-color: yellowgreen"> Examples:</font>
+    import turtle
+    polygon = turtle.Turtle()
+    num_sides = 6
+    side_length = 70
+    angle = 360.0 / num_sides
+    for i in range(num_sides):
+        polygon.forward(side_length)
+        polygon.right(angle)
+    turtle.done()
+    o/p:
+    <img src="/media/b23.JPG" width="300" height="300">
+
+</pre>
+</font>
+</p>
+<marquee >  <font color="purple" ><h1>END TURTLE GRAPHICS</h1></font></marquee><br>
+
+</body>
+</html>

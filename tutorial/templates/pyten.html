@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <center><h1><font color="maroon"><u>INHERITANCE</u></font></h1></center>
+
+    <meta charset="UTF-8">
+    <title>EW Technologies online learning</title>
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<p><font size="4">
+<marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="6"> Inheritance</font></marquee><br>
+Python allows you to create a class extended from one or more other classes. This class is called a derived class, or a subclass. The child class inherits the attributes, methods, and other members from the parent class. It can also override methods from the parent class. If the child class does not define its own constructor, by default, it will inherit the constructor of the parent class.
+
+<br><br>
+    Super() -> it is keyword to refer to super class member from sub class .<br><br>
+
+<pre>
+
+    <font style="background-color: yellowgreen">#Find the area of rectangle  and volume of cube  </font>
+    class cube:
+        def area1(self,x,y,z):
+            print("volume of Cube:\t",x*y*z)
+    class Rec(cube):
+        def area(self,x,y):
+            print("area of Rec:\t",x*y)
+    r=Rec()
+    r.area(6,4);
+    r.area1(6,4,9)
+
+    o/p:
+    area of Rec:	 24
+    volume of Cube:	 216
+
+    Example
+    class Sqr:
+        def area(self,x,y):
+            print("area of rec:\t",x+y)
+    class Rec(Sqr):
+        def area(self,x,y):
+            super().area(x,y)
+            print("area of Rec:\t",x*y)
+
+    r=Rec()
+    r.area(6,4);
+    o/p:
+    area of rec:	 10
+    area of Rec:	 24
+
+
+Python support all types of Inheritance
+
+    There are generally 6 types of inheritance such as
+        1.	Single Inheritance
+        2.	Multiple Inheritance
+        3.	Hierarchical Inheritance
+        4.	Multi-level Inheritance
+        5.	Hybrid Inheritance
+        6.	Multipath Inheritance
+<font color="#00008b" size="5">Single Inheritance:</font>
+When a derived class inherits properties from only one base class, it is known as Single Inheritance.
+    <center><img src="/media/b13.JPG" width="50%" height="50%"></center>
+    Example
+    class X():
+        def method(self):
+            print("Class X method")
+
+    class P(X):
+        def method(self):
+            print("Class P method")
+            super().method()
+    obj=P()
+    obj.method()
+
+    o/p:
+    Class P method
+    Class X method
+<font color="#00008b" size="5">Multiple Inheritance:</font>
+A class can inherit the features from not only one class but also from more classes.
+    <center><img src="/media/b14.JPG" width="50%" height="50%"></center>
+    Example
+    class Z():
+        def method2(self):
+            print("Class Z method")
+    class Y():
+        def method1(self):
+            print("Class Y method")
+    class X():
+        def method(self):
+            print("Class X method")
+
+    class P(X,Y,Z):
+        def method(self):
+            print("Class P method")
+            super().method()
+            super().method1()
+            super().method2()
+    obj=P()
+    obj.method()
+    o/p:
+    Class P method
+    Class X method
+    Class Y method
+    Class Z method
+
+
+<font color="#00008b" size="5">Hierarchical Inheritance:</font>
+We know that we can extend the capability of a class by adding additional members through inheritance. It is like tree.
+        <center><img src="/media/b15.JPG" width="50%" height="50%"></center>
+    Example
+    class Z():
+        def method1(self):
+            print("Class Z method")
+    class Y(Z):
+        def method2(self):
+            print("Class Y method")
+            super().method1()
+    class X(Z):
+        def method3(self):
+            print("Class X method")
+            super().method1()
+
+    class P(Y):
+        def method(self):
+            print("Class P method")
+            super().method2()
+    class Q(Y):
+        def method(self):
+            print("Class Q method")
+            super().method2()
+    class R(X):
+        def method(self):
+            print("Class R method")
+            super().method3()
+    class S(X):
+        def method(self):
+            print("Class S method")
+            super().method3()
+
+    obj=P()
+    obj1=Q()
+    obj2=S()
+    obj3=R()
+
+    obj.method()
+    obj1.method()
+    obj2.method()
+    obj3.method()
+
+    o/p:
+    Class P method
+    Class Y method
+    Class Z method
+    Class Q method
+    Class Y method
+    Class Z method
+    Class S method
+    Class X method
+    Class Z method
+    Class R method
+    Class X method
+    Class Z method
+
+
+
+<font color="#00008b" size="5">Multi-level Inheritance:</font>
+When a derived class inherits the methods and attributes from another derived class, it is known as multilevel inheritance.
+        <center><img src="/media/b16.JPG" width="20%" height="10%"></center>
+    Example
+    class Q():
+        def method(self):
+            print("Class Q method")
+    class R(Q):
+        def method(self):
+            print("Class R method")
+            super().method()
+    class S(R):
+        def method(self):
+            print("Class S method")
+            super().method()
+
+    obj=S()
+    obj.method()
+    o/p:
+    Class S method
+    Class R method
+    Class Q method
+
+<font color="#00008b" size="5">Hybrid Inheritance:</font>
+Sometimes we need to apply two or more types of inheritance to design a program. So a derived class which derives properties and methods from more than
+one form of inheritance is called hybrid inheritance. It is the combination of multilevel and multiple inheritance.
+        <center><img src="/media/b17.JPG" width="50%" height="50%"></center>
+
+<font color="#00008b" size="5">Multipath Inheritance:</font>
+When a child class inherits methods and properties from other more than one derived classes, it is known as multipath inheritance.
+
+        <center><img src="/media/b18.JPG" width="50%" height="50%"></center>
+
+</pre>
+
+
+<marquee><h1><span style="color: purple">END INHERITANCE</span></h1></marquee>
+
+
+</font></p>
+</body>
+</html>

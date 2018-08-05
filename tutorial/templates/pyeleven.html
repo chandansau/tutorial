@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <center><h1><font color="maroon"><u>POLYMORPHISM</u></font></h1></center>
+
+    <meta charset="UTF-8">
+    <title>EW Technologies online learning</title>
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<p><font size="4">
+    Polymorphism is an important feature of class definition in Python that is utilized when you have commonly named methods across classes or subclasses.<br>Poly means many and morphis means many forms.
+It something exhibits various form called polymorphism.
+<marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();">  <font color="#00008b" size="6"> Advantages of Polymorphism</font></marquee><br>
+<pre>
+=>It helps the programmer to reuse the codes, i.e., classes once written, tested and implemented can be reused as required. Saves a lot of time.
+
+=>Single variable can be used to store multiple data types.
+
+=>Easy to debug the codes.
+
+The following topics are examples for polymorphism in python:
+    ==>Duck typing philosophy of python
+    ==>Operator overloading
+    ==>Method overloading
+    ==>Method overriding
+
+<font color="#00008b" size="5">Duck typing philosophy of python</font>
+ calling a method without knowing the type(class)  of the object.
+
+    Example
+    <font style="background-color: yellowgreen">#duck type</font>
+    class Duck:
+        def talk(self):
+            print("Quack,quack!")
+    class Dog:
+        def talk(self):
+            print("Bow,wow!!")
+    #duck typing
+    def callit(obj):
+        obj.talk()
+    obj1=Duck()
+    callit(obj1)
+
+    obj2=Dog()
+    callit(obj2)
+
+    o/p:
+    Quack,quack!
+    Bow,wow!!
+
+<font color="#00008b" size="5">Operator overloading</font>
+same operator perform many operation.
+    Example
+    a=10
+    b=12
+    print(a+b)  #addition perform
+    a="AAABB"
+    b="CCCDD"
+    print(a+b)  # concatenation
+    a=[1,2,3,6,8]
+    b=[2,9,3,5]
+    print(a+b)  # join the list
+
+    o/p:
+    22
+    AAABBCCCDD
+    [1, 2, 3, 6, 8, 2, 9, 3, 5]
+
+<font color="#00008b" size="5">Method overloading</font>
+Methods can have the same name but different parameters.
+    Example
+    class pro:
+        def sum(self,*a):
+            if(a!=None):
+                print(sum(a))
+
+            print("Hello")
+
+    ob=pro()
+    ob.sum(2,3,5)
+    ob.sum(2.5,3.8)
+    ob.sum(25654,4687465)
+    o/p:
+    10
+    Hello
+    6.3
+    Hello
+    4713119
+    Hello
+
+<font color="#00008b" size="5">Method overriding</font>
+Override means having two methods with the same name but doing different tasks. It means that one of the methods overrides the other.
+If there is any method in the superclass and a method with the same name in a subclass, then by executing the method, the method of the corresponding
+class will be executed.
+
+    Example
+    <font style="background-color: yellowgreen">#derive rectangle class from squre class and display area of area of 2 class</font>
+    class Sqr:
+        def area(self,x,y):
+            print("area of rec:\t",x+y)
+    class Rec(Sqr):
+        def area(self,x,y):
+            print("area of Rec:\t",x*y)
+
+    r=Rec()
+    r.area(6,4);
+    o/p:
+    area of Rec:	 24
+
+
+<font color="#00008b" size="5">Abstract class</font>
+    	It is class that contain 0 or more abstract method. It have no body
+    Example
+    <font style="background-color: yellowgreen">   # create a abstract class with an abstract method to calculate squre ,sqrt ,cube value</font>
+    from abc import *
+    import math as m
+    class Myclass(ABC):
+        @abstractmethod
+        def calculate(self,x):
+            pass
+    class sub1(Myclass):
+        def calculate(self,x):
+            return(pow(x,2))
+
+    class sub2(Myclass):
+        def calculate(self,x):
+            return(x*x*x)
+    class sub3(Myclass):
+        def calculate(self,x):
+            return(m.sqrt(x))
+    ob=sub1();
+    ob1=sub2();
+    ob2=sub3();
+    print(ob.calculate(9))
+    print(ob1.calculate(9))
+    print(ob2.calculate(9))
+
+    o/p:
+    81
+    729
+    3.0
+
+
+</pre>
+<marquee><h1><span style="color: purple">END POLYMORPHISM</span></h1></marquee>
+
+</font>
+</pre>
+</body>
+</html>

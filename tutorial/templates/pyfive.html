@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <center><h1><font color="maroon"><u>CONTROL STATEMENTS</u></font></h1></center>
+    <meta charset="UTF-8">
+    <title>EW Technologies online learning</title>
+</head>
+<body style="background-color:aliceblue ; color: maroon" id="test" onmousedown='return false;' onselectstart='return false;'>
+<p><font size="4">
+<marquee direction=right onmouseover="this.stop();" onmouseout="this.start();"><font color=blue><u><h2>Control Statements</h2></u></font></marquee>
+Control Statements are Statements which control or change the flow of execution.The following are the statements available in Python:
+<pre>
+    => if Statements
+    => if...else Statements
+    => if ...elif...else Statements
+    => while loop
+    => for loop
+    => else suite
+    => break Statements
+    => continue Statements
+    => pass Statements
+    => assert Statements
+    =>return Statements
+</pre>
+<font color="#00008b" size="4">The if Statements:</font>
+<pre>
+    The general form of the if statement in Python looks like this:
+    syntax:
+    _______________________
+    if condition:
+        statements
+    _______________________
+
+    Example
+    n=10
+    if(n==10):
+        print(n)
+    o/p: 10
+    Example 2.
+    weight = float(input("How many pounds does your suitcase weigh? "))
+    if(weight > 50):
+        print("There is a $25 charge for luggage that heavy.")
+    print("Thank you for your business.")
+
+    o/p:
+    How many pounds does your suitcase weigh? 12
+    Thank you for your business.
+
+    How many pounds does your suitcase weigh? 56
+    There is a $25 charge for luggage that heavy.
+    Thank you for your business.
+</pre>
+<font color="#00008b" size="4">The if...else Statements:</font><br>
+It's executes a group of statements when a condition is True; otherwise ,it will execute another group of statements.
+<pre>
+    syntax:
+    ___________________________
+    if condition:
+        statements1
+    else:
+        statements2
+    ___________________________
+    Example
+
+    temperature = float(input('What is the temperature? '))
+    if(temperature > 70):
+        print('Wear shorts.')
+    else:
+        print('Wear long pants.')
+    print('Get some exercise outside.')
+
+    o/p:
+    What is the temperature? 50
+    Wear long pants.
+    Get some exercise outside.
+    What is the temperature? 88
+    Wear shorts.
+    Get some exercise outside.
+    <mark> #program to check even or odd</mark>
+    a = int(input('Enter number '))
+    if(a %2==0):
+        print('Even number\t',a)
+    else:
+        print('Odd number\t',a)
+    o/p:
+    Enter number 15
+    Odd number	 15
+</pre>
+
+<font color="#00008b" size="4">The  if ...elif...else Statements:</font><br>
+<br> The programmer has to test multiplecondition and execute statements depending on those conditions.
+<pre>
+    syntax:
+    _________________________
+     if condition:
+         statements1
+     elif condition:
+         statements2
+     elif condition:
+         statements3
+     elif condition:
+         statements4
+     else:
+         statements5
+    _________________________
+    Example
+    <mark>#prorgam to know if a given number is zero,or +ve or-ve</mark>
+    a=int(input("Enter a value"))
+    if(a==0):
+        print("a is ",a)
+    elif(a>0):
+        print(a," is posativeve")
+    else:
+        print(a," is negative")
+    o/p:
+    Enter a value-3
+    -3  is negative
+</pre>
+<font color="#00008b" size="4">The while loop:</font><br>
+A while loop statement in Python programming language repeatedly executes a target statement as long as a given condition is true.
+<pre>
+    syntax:
+    __________________________
+    while condition:
+        statements
+    __________________________
+    Example
+    x=1
+    while(x<=10):
+        print(x,end=" ")
+        x=x+1
+    print('end')
+    o/p: 1 2 3 4 5 6 7 8 9 10 end
+    Example
+    <mark># Display even numbers between m and n</mark>
+    m,n=[int(i) for i in input("Enter min and max value").split(",")]
+    x=m
+    if(x%2!=0):
+        x=x+1
+    while(x>=m and x<=n):
+        print(x,end=" ")
+        x=x+2
+    print('end')
+    o/p:
+    Enter min and max value9,21
+    10 12 14 16 18 20 end
+</pre>
+<font color="#00008b" size="4">The for loop:</font><br>
+For loops can iterate over a sequence of numbers using the "range" and "xrange" functions. The difference between range and xrange is that the range function returns a new list with numbers of that specified range, whereas xrange returns an iterator, which is more efficient.
+<pre>
+    syntax:
+    ____________________________
+    for var in range(start,end,jump):
+        statements
+    ____________________________
+    <mark>#Display 1 to 20</mark>
+    for i in range(1,21):
+    print(i,end=" ")
+    o/p: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+
+    <mark>#display odd number between 1 to 20</mark>
+    for i in range(1,21,2):
+        print(i,end=" ")
+    o/p:
+    1 3 5 7 9 11 13 15 17 19
+
+    <mark>#display odd number between 20 to 1</mark>
+    for i in range(20,0,-1):
+        print(i,end=" ")
+    o/p:
+    20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1
+
+    Example
+    primes = [2, 3, 5, 7]
+    for prime in primes:
+        print(prime)
+    o/p:
+    2
+    3
+    5
+    7
+</pre>
+<font color="#00008b" size="4">Nested Loops:</font><br>
+Python supports to have an else statement associated with a loop statement.
+==>If the else statement is used with a for loop, the else statement is executed when the loop has exhausted iterating the list.
+
+==>If the else statement is used with a while loop, the else statement is executed when the condition becomes false.
+<pre>
+    Example
+    for i in range(3):
+        for j in range(4):
+            print("i=",i,"\tj=",j)
+    o/p:
+    i= 0 	j= 0
+    i= 0 	j= 1
+    i= 0 	j= 2
+    i= 0 	j= 3
+    i= 1 	j= 0
+    i= 1 	j= 1
+    i= 1 	j= 2
+    i= 1 	j= 3
+    i= 2 	j= 0
+    i= 2 	j= 1
+    i= 2 	j= 2
+    i= 2 	j= 3
+
+    <mark>#Display stars in right angle triangle form</mark>
+
+    for i in range(1,8):
+        for j in range(1,i+1):
+            print("*",end=" ")
+        print()
+    o/p:
+    *
+    * *
+    * * *
+    * * * *
+    * * * * *
+    * * * * * *
+    * * * * * * *
+
+    <mark>#Display stars in equilateral angle triangle form</mark>
+    n=20
+    for i in range(1,8):
+        print(' '*n,end="")
+        print('* '*(i))
+        n-=1
+    o/p:
+                    *
+                   * *
+                  * * *
+                 * * * *
+                * * * * *
+               * * * * * *
+              * * * * * * *
+
+</pre>
+<font color="#00008b" size="4">The else Suite:</font><br>
+It is possible to use <mark>else </mark> statements along with <mark>for loop </mark>or <mark>while loop</mark>.
+<pre>
+    <mark style="background-color: cornflowerblue">for with else</mark>                           <mark style="background-color: cornflowerblue">while with else </mark>
+    syntax:                                 syntax
+       for var in range():                     while(condition):
+            statements                              statements
+       else:                                   else:
+            statements                              statements
+
+    Example
+    <mark>#for with else</mark>
+    for i in range(1,8):
+        print(i,end=' ')
+    else:
+        print("\nFinish")
+    o/p:
+    1 2 3 4 5 6 7
+    Finish
+
+    Example
+    <mark>#while with else</mark>
+    x=1
+    while(x<5):
+        print(x,end=' ')
+        x=x+1
+    else:
+        print('\nout of loop')
+
+    o/p:
+    1 2 3 4
+    out of loop
+</pre>
+<font color="#00008b" size="4">The Break Statement:</font><br>
+It terminates the current loop and resumes execution at the next statement, just like the traditional break statement in C.
+The most common use for break is when some external condition is triggered requiring a hasty exit from a loop. The break statement can be used in both while and for loops.
+<br>
+If you are using nested loops, the break statement stops the execution of the innermost loop and start executing the next line of code after the block.
+<pre>
+    Example
+    x=1
+    while(x<10):
+        print(x,end=' ')
+        x=x+1
+        if(x==7):
+            break
+    print("out of loop")
+    o/p:
+    1 2 3 4 5 6 out of loop
+
+</pre>
+
+<font color="#00008b" size="4">The Pass Statement:</font><br>
+It is used when a statement is required syntactically but you do not want any command or code to execute.The pass statement is a null operation; nothing happens when it executes.
+<pre>
+    x=1
+    while(x<10):
+        print(x,end=' ')
+        x=x+1
+        if(x>7): # if >7 then continue next iteration
+            pass
+    print("out of loop")
+    o/p:
+    1 2 3 4 5 6 7 8 9 out of loop
+
+</pre>
+<font color="#00008b" size="4">The assert Statement:</font><br>
+It is useful to check if a particular condition is fulfille or not.
+<pre>
+    syntax:
+    assert expression,message
+
+    Example
+    def avg(marks):
+        assert(len(marks) != 0)
+        return(sum(marks)/len(marks))
+
+    mark1 = [15,20,18]
+    print("Average of mark1:",avg(mark1))
+
+    o/p:
+    Average of mark1: 17.666666666666668
+
+
+    Example
+    <mark># Fibonacci numbers</mark>
+    def pro():
+        a,b=0,1
+        print("Sequence\' is")
+        for i in range(0,6):
+            print(a)
+            a,b=b,a+b
+        return()
+    pro()
+    o/p:
+    Sequence' is
+    0
+    1
+    1
+    2
+    3
+    5
+
+</pre>
+
+ <marquee><h1><span style="color: purple">END CONTROL STATEMENTS</span></h1></marquee>
+
+
+</font>
+</pre>
+</body>
+</html>
